@@ -1,5 +1,5 @@
 .button {
-  background-color: #9b1c1f;
+  background-color: var(--deepCrimson);
   color: white;
   border: none;
   border-radius: 18px;
@@ -7,9 +7,11 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 20px;
+  height: 70px;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #d4af37;
+  background-color: var(--metallicGold);
   color: black;
 }
