@@ -1,0 +1,47 @@
+[
+  {
+    "kategori": "Juleunderholdning",
+    "tile": [
+      {
+        "point": 100,
+        "svar": "",
+        "question": ""
+      },
+      {
+        "point": 200,
+        "svar": "",
+        "question": ""
+      },
+      {
+        "point": 400,
+        "svar": "",
+        "question": ""
+      },
+      {
+        "point": 800,
+        "svar": "",
+        "question": ""
+      },
+      {
+        "point": 1000,
+        "svar": "",
+        "question": ""
+      }
+    ]
+  },
+  {
+    "kategori": "Julemanden",
+    "tile": [
+      {
+        "point": 100,
+        "svar": "",
+        "question": ""
+      },
+      {
+        "point": 200,
+        "svar": "",
+        "question": ""
+      }
+    ]
+  }
+]
