@@ -112,9 +112,9 @@ export const addTeams = async (id, formData) => {
 /* ====== PUT ========  */
 
 // Update Team
-export const updateTeam = async (id, formData) => {
+export const updateTeam = async (formData) => {
   try {
-    const response = await fetch(`${API_URL}/team/${id}`, {
+    const response = await fetch(`${API_URL}/team`, {
       method: "PUT",
       body: formData,
     });
