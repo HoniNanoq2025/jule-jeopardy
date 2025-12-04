@@ -11,11 +11,14 @@ import ChooseGame from "./pages/ChooseGame/ChooseGame";
 import Jeopardy from "./pages/Jeopardy/Jeopardy";
 import EditGame from "./pages/EditGame/EditGame";
 import styles from "./App.module.css";
+import CreateTeam from "./components/CreateTeam/CreateTeam";
+
 
 export default function App() {
   return (
     <div className={styles.app}>
       <Header />
+      <CreateTeam />
       <main className={styles.main}>
         <Routes>
           <Route path="/" element={<StartSpilForside />} />
