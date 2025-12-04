@@ -31,7 +31,7 @@ export default function CreateTeam({ onCreateTeam }) {
   };
 
   return (
-    <div className="create-team">
+      <div className={styles.createTeam}>
       <h2>Hold navn</h2>
 
       <input
@@ -41,20 +41,19 @@ export default function CreateTeam({ onCreateTeam }) {
         onChange={(e) => setTeamName(e.target.value)}
       />
 
-      <div className="image-grid">
+      <div className={styles.imageGrid}>
+
         {images.map((img) => (
           <img
             key={img.id}
             src={img.url}
-            className={selectedImage === img.url ? "selected" : ""}
+            className={selectedImage === img.url ? styles.selected : ""}
             onClick={() => setSelectedImage(img.url)}
           />
         ))}
       </div>
 
-      <Button onClick={handleSubmit} disabled={!teamName || !selectedImage}>
-        Tilføj hold
-      </Button>
+      <Button onButtonClick={handleSubmit} disabled={!teamName || !selectedImage} buttonText="Tilføj hold" />
     </div>
   );
 }
