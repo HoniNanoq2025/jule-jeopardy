@@ -1,47 +1,96 @@
-[
-  {
-    "kategori": "Juleunderholdning",
-    "tile": [
-      {
-        "point": 100,
-        "svar": "",
-        "question": ""
-      },
-      {
-        "point": 200,
-        "svar": "",
-        "question": ""
-      },
-      {
-        "point": 400,
-        "svar": "",
-        "question": ""
-      },
-      {
-        "point": 800,
-        "svar": "",
-        "question": ""
-      },
-      {
-        "point": 1000,
-        "svar": "",
-        "question": ""
-      }
-    ]
-  },
-  {
-    "kategori": "Julemanden",
-    "tile": [
-      {
-        "point": 100,
-        "svar": "",
-        "question": ""
-      },
-      {
-        "point": 200,
-        "svar": "",
-        "question": ""
-      }
-    ]
-  }
-]
+{
+  "name": "Spil 1",
+  "teams": [],
+  "categories": [
+    {
+      "name": "Juleunderholdning",
+      "questions": [
+        {
+          "question": "Denne drik forbinder man ofte med jul, og den laves af mælk, fløde, sukker og æg.",
+          "answer": "Hvad er æggesnaps (Eggnog)?",
+          "value": 100
+        },
+        {
+          "question": "I filmen 'Alene Hjemme' rejser familien McCallister hertil på juleferie.",
+          "answer": "Hvad er Paris?",
+          "value": 200
+        },
+        {
+          "question": "Denne kendte julesang starter med ordene 'Glade jul, dejlige jul'.",
+          "answer": "Hvad er 'Glade jul' (Stille Nacht / Silent Night)?",
+          "value": 400
+        },
+        {
+          "question": "Denne danske tradition indebærer at danse rundt om et træ pyntet med lys og kugler juleaften.",
+          "answer": "Hvad er at danse om juletræet?",
+          "value": 800
+        },
+        {
+          "question": "Denne julekalender på DR introducerede nissen Pyrus i 1994.",
+          "answer": "Hvad er 'Alletiders Jul'?",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "Julemanden",
+      "questions": [
+        {
+          "question": "Dette rensdyr er kendt for sin røde næse og hjælper julemanden med at trække slæden.",
+          "answer": "Hvem er Rudolf?",
+          "value": 100
+        },
+        {
+          "question": "Dette transportmiddel bruger julemanden til at levere gaver verden rundt.",
+          "answer": "Hvad er en slæde?",
+          "value": 200
+        },
+        {
+          "question": "Disse små hjælpere arbejder i julemandens værksted og laver legetøj til børn.",
+          "answer": "Hvem er nisser?",
+          "value": 400
+        },
+        {
+          "question": "I sangen 'Santa Claus Is Coming to Town' gør julemanden dette for at finde ud af, om børn er artige.",
+          "answer": "Hvad er at lave en liste og tjekke den to gange?",
+          "value": 800
+        },
+        {
+          "question": "Dette digt fra 1823 introducerede navnene på julemandens otte oprindelige rensdyr.",
+          "answer": "Hvad er 'A Visit from St. Nicholas' (The Night Before Christmas)?",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "Juletraditioner",
+      "questions": [
+        {
+          "question": "",
+          "answer": "",
+          "value": 100
+        },
+        {
+          "question": "",
+          "answer": "",
+          "value": 200
+        },
+        {
+          "question": "",
+          "answer": "",
+          "value": 400
+        },
+        {
+          "question": "",
+          "answer": "",
+          "value": 800
+        },
+        {
+          "question": "",
+          "answer": "",
+          "value": 1000
+        }
+      ]
+    }
+  ]
+}
