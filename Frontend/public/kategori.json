@@ -66,28 +66,118 @@
       "name": "Juletraditioner",
       "questions": [
         {
-          "question": "",
-          "answer": "",
+          "question": "I dette land hænger man julestrømper ved pejsen, så julemanden kan fylde dem med gaver.",
+          "answer": "Hvad er USA?",
           "value": 100
         },
         {
-          "question": "",
-          "answer": "",
+          "question": "I dette land danser man ofte rundt om juletræet juleaften, en tradition der er meget udbredt.",
+          "answer": "Hvad er Danmark?",
           "value": 200
         },
         {
-          "question": "",
-          "answer": "",
+          "question": "I dette land fejrer man 'Las Posadas', hvor man genopfører Marias og Josefs rejse til Betlehem.",
+          "answer": "Hvad er Mexico?",
           "value": 400
         },
         {
-          "question": "",
-          "answer": "",
+          "question": "I dette land spiser man ofte 'Panettone', en sød julebrødskage fyldt med tørret frugt.",
+          "answer": "Hvad er Italien?",
           "value": 800
         },
         {
-          "question": "",
-          "answer": "",
+          "question": "I dette land fejrer man 'Julotta', en tidlig julegudstjeneste ved solopgang den 25. december.",
+          "answer": "Hvad er Sverige?",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "Julemyter",
+      "questions": [
+        {
+          "question": "Det siges, at julemanden bor på Nordpolen.",
+          "answer": "Sand",
+          "value": 100
+        },
+        {
+          "question": "Pebernødder blev oprindeligt brugt som små gaver til børn, der havde været artige.",
+          "answer": "Sand",
+          "value": 200
+        },
+        {
+          "question": "Det er en gammel dansk myte, at juletræet altid har været en del af julen i Danmark.",
+          "answer": "Falsk",
+          "value": 400
+        },
+        {
+          "question": "Man siger, at Rudolf altid har været en del af julemandens oprindelige rensdyrflok.",
+          "answer": "Falsk",
+          "value": 800
+        },
+        {
+          "question": "En populær myte fortæller, at misteltenen bringer held og kærlighed, hvis man kysser under den.",
+          "answer": "Sand",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "Julebordet",
+      "questions": [
+        {
+          "question": "Denne klassiske ret består af flæskesvær og serveres ofte som hovedret juleaften.",
+          "answer": "Hvad er flæskesteg?",
+          "value": 100
+        },
+        {
+          "question": "Denne dessert med ris, fløde og kirsebærsovs indeholder en hel mandel som tradition.",
+          "answer": "Hvad er risalamande?",
+          "value": 200
+        },
+        {
+          "question": "Denne ret består af små stegte frikadeller, som ofte er en del af julefrokosten.",
+          "answer": "Hvad er frikadeller?",
+          "value": 400
+        },
+        {
+          "question": "Denne fisk serveres ofte marineret i forskellige varianter som karry, løg eller dild til julefrokosten.",
+          "answer": "Hvad er sild?",
+          "value": 800
+        },
+        {
+          "question": "Denne stærke drik, som ofte nydes til julefrokosten sammen med sild, er en dansk tradition.",
+          "answer": "Hvad er snaps?",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "name": "Gæt en julesang",
+      "questions": [
+        {
+          "question": "Glade jul",
+          "answer": "Hvad er 'Glade jul, dejlige jul'?",
+          "value": 100
+        },
+        {
+          "question": "Bjældeklang",
+          "answer": "Hvad er 'Bjældeklang' (Jingle Bells)?",
+          "value": 200
+        },
+        {
+          "question": "På loftet",
+          "answer": "Hvad er 'På loftet sidder nissen'?",
+          "value": 400
+        },
+        {
+          "question": "Højt fra træets",
+          "answer": "Hvad er 'Højt fra træets grønne top'?",
+          "value": 800
+        },
+        {
+          "question": "Last Christmas",
+          "answer": "Hvad er 'Last Christmas' af Wham?",
           "value": 1000
         }
       ]
