@@ -39,6 +39,7 @@ export default function CreateTeam({ onCreateTeam }) {
           placeholder="Skriv holdnavn..."
           value={teamName}
           onChange={(e) => setTeamName(e.target.value)}
+          required
         />
       </div>
 
