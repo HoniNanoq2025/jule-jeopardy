@@ -1,0 +1,34 @@
+.Home{
+  background-image: url(../../assets/img/background-img/julebillede.jpg);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+text-align: center;
+min-height: 100vh;
+
+}
+
+.Homediv {
+  padding:10rem; 
+  
+}
+
+.Homediv div {
+  padding:20px; 
+  
+}
+
+@media screen and (max-width:650px){
+ .Home div Button  {
+  font-size: 14px;
+  margin-left: 20px;
+
+ }
+
+ .Homediv {
+padding: 3rem 1rem;
+
+}
+
+
+}

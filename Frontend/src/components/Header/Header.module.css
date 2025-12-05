@@ -1,0 +1,12 @@
+.Header {
+  background-color: #D4AF37;
+ padding: 20px;
+}
+
+.Header a:hover {
+  color: white;
+}
+
+.jeopardy{
+  color: darkred;
+}
