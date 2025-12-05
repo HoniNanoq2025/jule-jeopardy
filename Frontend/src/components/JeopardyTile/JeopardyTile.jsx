@@ -1,18 +1,21 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import styles from "./JeopardyTile.module.css";
 
-export default function JeopardyTile({
-  value,
-  question,
-  answer,
-  state,
-  onClick,
-}) {
+export default function JeopardyTile({ value, question, answer }) {
+  const [state, setState] = useState("value");
+
   // Beregn rotation basert på state (120 grader per side for at få trekant)
   const rotation = state === "value" ? 0 : state === "question" ? -120 : -240;
 
+  const handleClick = () => {
+    setState((prev) =>
+      prev === "value" ? "question" : prev === "question" ? "answer" : "value"
+    );
+  };
+
   return (
-    <div className="tileContainer" onClick={onClick}>
+    <div className={styles.tileContainer} onClick={handleClick}>
       <motion.div
         className={styles.trianglePrismEffect}
         animate={{ rotateY: rotation }}
@@ -20,21 +23,27 @@ export default function JeopardyTile({
       >
         {/* Side 1 - POINT VÆRDI */}
         <div className={`${styles.triangleSide} ${styles.side01}`}>
-          <span className={styles.pointValue}>{questions.value}</span>
+          <span className={styles.pointValue}>
+            {/* {questions.value} */}POINT
+          </span>
         </div>
 
         {/* Side 2 - SPØRGSMÅL */}
         <div className={`${styles.triangleSide} ${styles.side02}`}>
           <div className={styles.content}>
-            <div className={styles.questionContent}>{questions.question}</div>
+            <div className={styles.questionContent}>
+              {/* {questions.question} */}SVAR
+            </div>
           </div>
         </div>
 
         {/* Side 3 - SVAR */}
-        <div className={`${triangleSide} ${styles.side03}`}>
+        <div className={`${styles.triangleSide} ${styles.side03}`}>
           <div className={styles.content}>
             <div className={styles.answerTitle}>Svar:</div>
-            <div className={styles.answerContent}>{questions.answer}</div>
+            <div className={styles.answerContent}>
+              {/* {questions.answer} */}SPØRGSMÅL
+            </div>
           </div>
         </div>
       </motion.div>
