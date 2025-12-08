@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
+import { GameProvider } from "../../context/GameContext";
+import { fetchGameById } from "../../hooks/fetch";
+import LoadingThreeDotsJumping from "../../components/LoadingThreeDotsJumping/LoadingThreeDotsJumping";
 import JeopardyGrid from "../../components/JeopardyGrid/JeopardyGrid";
 import TeamScoreBoard from "../../components/TeamScoreBoard/TeamScoreBoard";
 import styles from "./Jeopardy.module.css";
-import { fetchGameById } from "../../hooks/fetch";
 
 export default function Jeopardy() {
   const [game, setGame] = useState([]);
   const [categories, setCategories] = useState([]);
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const [lastValue, setLastValue] = useState(null);
 
   useEffect(() => {
     const getGame = async () => {
@@ -30,18 +30,28 @@ export default function Jeopardy() {
     getGame();
   }, []);
 
-  console.log(categories);
+  // Vis loading state
+  if (loading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <LoadingThreeDotsJumping />
+      </div>
+    );
+  }
+
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.jeopardyContainer}>
-        <div className={styles.gameHeader}>
-          <h1>{game.name}</h1>
+    <GameProvider>
+      <div className={styles.mainContainer}>
+        <div className={styles.jeopardyContainer}>
+          <div className={styles.gameHeader}>
+            <h1>{game.name}</h1>
+          </div>
+          <JeopardyGrid categories={categories} />
         </div>
-        <JeopardyGrid categories={categories} onTileClick={setLastValue} />
+        <div className={styles.scoreContainer}>
+          <TeamScoreBoard teams={teams} />
+        </div>
       </div>
-      <div className={styles.scoreContainer}>
-        <TeamScoreBoard teams={teams} lastValue={lastValue} />
-      </div>
-    </div>
+    </GameProvider>
   );
 }

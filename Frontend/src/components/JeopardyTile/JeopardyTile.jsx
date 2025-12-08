@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useGame } from "../../context/GameContext"; //import af context
 import styles from "./JeopardyTile.module.css";
 
-export default function JeopardyTile({
-  value,
-  question,
-  answer,
-  onSelectValue,
-}) {
+export default function JeopardyTile({ value, question, answer }) {
   const [state, setState] = useState("value");
+
+  // Hentes direkte fra context
+  const { setLastValue } = useGame();
 
   // Beregn rotation basert på state (120 grader per side for at få trekant)
   const rotation = state === "value" ? 0 : state === "question" ? -120 : -240;
@@ -16,7 +15,7 @@ export default function JeopardyTile({
   const handleClick = () => {
     setState((prev) => {
       if (prev === "value") {
-        onSelectValue(value);
+        setLastValue(value); // Send point-værdi til context ved første klik
         return "question";
       }
       if (prev === "question") return "answer";
