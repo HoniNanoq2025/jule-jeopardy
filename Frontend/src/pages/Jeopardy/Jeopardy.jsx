@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { fetchGameById } from "../../hooks/fetch";
 import { GameProvider } from "../../context/GameContext";
+import { fetchGameById } from "../../hooks/fetch";
 import LoadingThreeDotsJumping from "../../components/LoadingThreeDotsJumping/LoadingThreeDotsJumping";
 import JeopardyGrid from "../../components/JeopardyGrid/JeopardyGrid";
 import TeamScoreBoard from "../../components/TeamScoreBoard/TeamScoreBoard";
