@@ -1,6 +1,7 @@
 [
   {
     "name": "Julens Jeopardy",
+    "isOver": false,
     "teams": [],
     "categories": [
       {
@@ -187,6 +188,7 @@
   },
   {
     "name": "Juleduellen",
+    "isOver": false,
     "teams": [],
     "categories": [
       {
@@ -373,6 +375,7 @@
   },
   {
     "name": "Julefesten",
+    "isOver": false,
     "teams": [],
     "categories": [
       {
