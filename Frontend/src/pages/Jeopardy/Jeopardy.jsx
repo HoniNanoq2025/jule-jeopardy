@@ -10,6 +10,8 @@ export default function Jeopardy() {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [lastValue, setLastValue] = useState(null);
+
   useEffect(() => {
     const getGame = async () => {
       try {
@@ -35,10 +37,10 @@ export default function Jeopardy() {
         <div className={styles.gameHeader}>
           <h1>{game.name}</h1>
         </div>
-        <JeopardyGrid categories={categories} />
+        <JeopardyGrid categories={categories} onTileClick={setLastValue} />
       </div>
       <div className={styles.scoreContainer}>
-        <TeamScoreBoard teams={teams} />
+        <TeamScoreBoard teams={teams} lastValue={lastValue} />
       </div>
     </div>
   );

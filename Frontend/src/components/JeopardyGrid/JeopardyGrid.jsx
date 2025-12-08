@@ -1,7 +1,7 @@
 import JeopardyColumn from "../JeopardyColumn/JeopardyColumn";
 import styles from "./JeopardyGrid.module.css";
 
-export default function JeopardyGrid({ categories }) {
+export default function JeopardyGrid({ categories, onTileClick }) {
   console.log(categories);
   return (
     <div className={styles.backgroundContainer}>
@@ -14,6 +14,7 @@ export default function JeopardyGrid({ categories }) {
             <JeopardyColumn
               key={category._id}
               questions={category?.questions}
+              onTileClick={onTileClick}
             />
           </div>
         ))}

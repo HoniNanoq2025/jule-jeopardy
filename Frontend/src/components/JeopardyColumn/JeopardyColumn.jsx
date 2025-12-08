@@ -1,7 +1,7 @@
 import styles from "./JeopardyColumn.module.css";
 import JeopardyTile from "../JeopardyTile/JeopardyTile";
 
-export default function JeopardyColumn({ questions }) {
+export default function JeopardyColumn({ questions, onTileClick }) {
   console.log(questions);
   return (
     <div className={styles.columnContainer}>
@@ -11,6 +11,7 @@ export default function JeopardyColumn({ questions }) {
           value={question.value}
           answer={question.answer}
           question={question.question}
+          onSelectValue={onTileClick}
         />
       ))}
     </div>
