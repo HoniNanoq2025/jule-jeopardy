@@ -1,0 +1,71 @@
+.tileContainer {
+  position: relative;
+  height: 8rem;
+  cursor: pointer;
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+.trianglePrismEffect {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.triangleSide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgb(154, 42, 72) 0%,
+    rgb(155, 28, 31) 100%
+  );
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+}
+
+.side01 {
+  transform: rotateY(0deg) translateZ(64px);
+}
+
+.side02 {
+  transform: rotateY(120deg) translateZ(64px);
+}
+
+.side03 {
+  transform: rotateY(240deg) translateZ(64px);
+}
+
+.pointValue {
+  color: var(--lightBeige);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.content {
+  color: white;
+  text-align: center;
+}
+
+.questionContent {
+  font-size: 1rem;
+}
+
+.answerTitle {
+  font-size: 0.875rem;
+  color: #fde047;
+  margin-bottom: 0.5rem;
+}
+
+.answerContent {
+  font-size: 1.125rem;
+}

@@ -3,8 +3,10 @@ import CreateTeam from "../../components/CreateTeam/CreateTeam";
 
 export default function AddTeam() {
   return (
-    <div className={styles.createTeamContainer}>
-      <CreateTeam />
+    <div className={styles.containerStylesTeam}>
+      <div className={styles.createTeamContainer}>
+        <CreateTeam />
+      </div>
     </div>
   );
 }

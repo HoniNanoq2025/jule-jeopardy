@@ -1,3 +1,10 @@
+.containerStylesTeam {
+  background-image: url(../../assets/img/background-img/bg-image-game.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .createTeamContainer {
-    
 }
