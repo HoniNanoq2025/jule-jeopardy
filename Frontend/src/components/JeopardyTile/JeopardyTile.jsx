@@ -2,16 +2,26 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import styles from "./JeopardyTile.module.css";
 
-export default function JeopardyTile({ value, question, answer }) {
+export default function JeopardyTile({
+  value,
+  question,
+  answer,
+  onSelectValue,
+}) {
   const [state, setState] = useState("value");
 
   // Beregn rotation basert på state (120 grader per side for at få trekant)
   const rotation = state === "value" ? 0 : state === "question" ? -120 : -240;
 
   const handleClick = () => {
-    setState((prev) =>
-      prev === "value" ? "question" : prev === "question" ? "answer" : "value"
-    );
+    setState((prev) => {
+      if (prev === "value") {
+        onSelectValue(value);
+        return "question";
+      }
+      if (prev === "question") return "answer";
+      return "answer";
+    });
   };
 
   return (
