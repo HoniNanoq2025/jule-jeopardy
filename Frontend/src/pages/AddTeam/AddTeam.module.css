@@ -4,7 +4,48 @@
   background-position: center;
   background-size: cover;
   overflow: hidden;
+  position: relative; /* vigtigt for sne-overlay */
+}
+
+/* Sne-lag */
+.containerStylesTeam::before {
+  content: ""; /* nødvendigt for at pseudo-elementet vises */
+  position: absolute; /* placerer sne-laget ovenpå containeren */
+  top: 0; /* starter øverst */
+  left: 0; /* starter helt til venstre */
+  width: 100%; /* fylder hele bredden */
+  height: 100%; /* fylder hele højden */
+  pointer-events: none; /* sneen kan ikke klikkes på */
+  z-index: 0; /* sneen ligger under createTeamContainer */
+
+  /* tre lag snefnug med forskellig størrelse og gennemsigtighed */
+  background-image: radial-gradient(
+      rgba(255, 255, 255, 0.8) 2px,
+      transparent 2px
+    ),
+    radial-gradient(rgba(255, 255, 255, 0.6) 3px, transparent 3px),
+    radial-gradient(rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px);
+
+  /* hver sne-lag gentages som mønster */
+  background-size: 60px 60px, 100px 100px, 150px 150px;
+  background-repeat: repeat;
+
+  /* sneen animeres nedad i loop */
+  animation: snowFall 5s linear infinite; /* hurtigt, men smooth */
 }
 
 .createTeamContainer {
+  position: relative; /* gør det muligt at styre lag */
+  z-index: 1; /* indholdet vises ovenpå sneen */
+}
+
+@keyframes snowFall {
+  0% {
+    /* startposition for alle tre sne-lag */
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    /* flyt præcis én gentagelse for hvert lag */
+    background-position: 0 60px, 0 100px, 0 150px;
+  }
 }
