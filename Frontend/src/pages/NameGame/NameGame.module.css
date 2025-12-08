@@ -1,0 +1,62 @@
+.gameName{
+  background-image: url(../../assets/img/background-img/Copilot_20251203_100536.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+text-align: center;
+min-height: 100vh;
+  padding: 2rem;
+  display: block;
+
+}
+
+.gameNameContainer{
+
+   padding:9rem;
+}
+
+.gameNameContainer div {
+
+
+
+   padding:20px;
+}
+
+
+
+input{
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 200px;
+  width: 100%;
+}
+
+
+@media screen and (max-width:620px){
+ .gameName Button  {
+  font-size: 14px;
+  margin: 0 auto;
+  
+
+ }
+
+   .gameNameContainer {
+    padding: 3rem 1rem;
+  }
+
+  .gameNameContainer button {
+    font-size: 14px;
+    
+    
+    
+  }
+
+  input {
+    max-width: 150px;
+    width: 100%;
+  }
+
+}
+
+
+
