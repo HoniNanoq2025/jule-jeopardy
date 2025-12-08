@@ -23,17 +23,13 @@ export default function JeopardyTile({ value, question, answer }) {
       >
         {/* Side 1 - POINT VÆRDI */}
         <div className={`${styles.triangleSide} ${styles.side01}`}>
-          <span className={styles.pointValue}>
-            {/* {questions.value} */}POINT
-          </span>
+          <span className={styles.pointValue}>{value}</span>
         </div>
 
         {/* Side 2 - SPØRGSMÅL */}
         <div className={`${styles.triangleSide} ${styles.side02}`}>
           <div className={styles.content}>
-            <div className={styles.questionContent}>
-              {/* {questions.question} */}SVAR
-            </div>
+            <div className={styles.questionContent}>{question}</div>
           </div>
         </div>
 
@@ -41,9 +37,7 @@ export default function JeopardyTile({ value, question, answer }) {
         <div className={`${styles.triangleSide} ${styles.side03}`}>
           <div className={styles.content}>
             <div className={styles.answerTitle}>Svar:</div>
-            <div className={styles.answerContent}>
-              {/* {questions.answer} */}SPØRGSMÅL
-            </div>
+            <div className={styles.answerContent}>{answer}</div>
           </div>
         </div>
       </motion.div>
