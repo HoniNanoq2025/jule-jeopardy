@@ -2,16 +2,26 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import styles from "./JeopardyTile.module.css";
 
-export default function JeopardyTile({ value, question, answer }) {
+export default function JeopardyTile({
+  value,
+  question,
+  answer,
+  onSelectValue,
+}) {
   const [state, setState] = useState("value");
 
   // Beregn rotation basert på state (120 grader per side for at få trekant)
   const rotation = state === "value" ? 0 : state === "question" ? -120 : -240;
 
   const handleClick = () => {
-    setState((prev) =>
-      prev === "value" ? "question" : prev === "question" ? "answer" : "value"
-    );
+    setState((prev) => {
+      if (prev === "value") {
+        onSelectValue(value);
+        return "question";
+      }
+      if (prev === "question") return "answer";
+      return "answer";
+    });
   };
 
   return (
@@ -23,17 +33,13 @@ export default function JeopardyTile({ value, question, answer }) {
       >
         {/* Side 1 - POINT VÆRDI */}
         <div className={`${styles.triangleSide} ${styles.side01}`}>
-          <span className={styles.pointValue}>
-            {/* {questions.value} */}POINT
-          </span>
+          <span className={styles.pointValue}>{value}</span>
         </div>
 
         {/* Side 2 - SPØRGSMÅL */}
         <div className={`${styles.triangleSide} ${styles.side02}`}>
           <div className={styles.content}>
-            <div className={styles.questionContent}>
-              {/* {questions.question} */}SVAR
-            </div>
+            <div className={styles.questionContent}>{question}</div>
           </div>
         </div>
 
@@ -41,9 +47,7 @@ export default function JeopardyTile({ value, question, answer }) {
         <div className={`${styles.triangleSide} ${styles.side03}`}>
           <div className={styles.content}>
             <div className={styles.answerTitle}>Svar:</div>
-            <div className={styles.answerContent}>
-              {/* {questions.answer} */}SPØRGSMÅL
-            </div>
+            <div className={styles.answerContent}>{answer}</div>
           </div>
         </div>
       </motion.div>

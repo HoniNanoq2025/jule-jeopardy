@@ -1,4 +1,4 @@
-const API_URL = "https://jeopardy-gkiyb.ondigitalocean.app/";
+const API_URL = "https://jeopardy-gkiyb.ondigitalocean.app";
 
 /* ====== FETCH ========  */
 
