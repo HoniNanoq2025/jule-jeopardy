@@ -12,7 +12,7 @@
   box-sizing: border-box;
   margin-bottom: 15px;
 }
-
+ 
 .createTeam input {
   width: 100%;
   padding: 12px;
@@ -22,7 +22,7 @@
   border-radius: 10px;
   border: 2px solid var(--lightBeige);
 }
-
+ 
 .headerContainer {
   background: var(--lightBeige);
   border-radius: 16px;
@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
 }
-
+ 
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -46,7 +46,7 @@
   justify-items: center;
   align-items: center;
 }
-
+ 
 .imageGrid img {
   cursor: pointer;
   border-radius: 50%;
@@ -55,12 +55,12 @@
   height: 70px;
   background-color: var(--deepCrimson);
 }
-
+ 
 .imageGrid img.selected {
   border-color: var(--christmasGreen);
   box-shadow: 0 0 10px var(--christmasGreen);
 }
-
+ 
 .createTeam button {
   width: 100%;
   padding: 12px;

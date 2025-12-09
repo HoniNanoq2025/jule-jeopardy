@@ -11,7 +11,7 @@ import ChooseGame from "./pages/ChooseGame/ChooseGame";
 import Jeopardy from "./pages/Jeopardy/Jeopardy";
 import EditGame from "./pages/EditGame/EditGame";
 import styles from "./App.module.css";
-
+ 
 export default function App() {
   return (
     <div className={styles.app}>
@@ -28,8 +28,9 @@ export default function App() {
           <Route path="/edit-game" element={<EditGame />} />
         </Routes>
       </main>
-
+ 
       <Footer />
     </div>
   );
 }
+ 
