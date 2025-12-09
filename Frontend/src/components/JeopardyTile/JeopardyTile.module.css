@@ -1,6 +1,6 @@
 .tileContainer {
   position: relative;
-  height: 8rem;
+  height: 7rem;
   cursor: pointer;
   perspective: 1000px;
   perspective-origin: center;
@@ -43,7 +43,7 @@
 
 .pointValue {
   color: var(--lightBeige);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
