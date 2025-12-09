@@ -36,8 +36,13 @@
 }
 
 .createTeamContainer {
-  position: relative; /* gør det muligt at styre lag */
-  z-index: 1; /* indholdet vises ovenpå sneen */
+  position: relative; /* stadig ovenpå sneen */
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end; /* skubber indholdet til højre */
+  align-items: center;
+  height: 100%;
+  padding-right: 50px; /* luft ind fra højre kant - hvis mere luft så ændre px */
 }
 
 @keyframes snowFall {
