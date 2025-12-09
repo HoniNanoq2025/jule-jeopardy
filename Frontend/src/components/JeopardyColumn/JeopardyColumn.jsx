@@ -2,7 +2,6 @@ import styles from "./JeopardyColumn.module.css";
 import JeopardyTile from "../JeopardyTile/JeopardyTile";
 
 export default function JeopardyColumn({ questions }) {
-  console.log(questions);
   return (
     <div className={styles.columnContainer}>
       {questions.map((question) => (
