@@ -1,4 +1,4 @@
-const API_URL = "https://jeopardy-gkiyb.ondigitalocean.app/";
+const API_URL = "https://jeopardy-gkiyb.ondigitalocean.app";
 
 /* ====== FETCH ========  */
 
@@ -137,6 +137,26 @@ export const updateGame = async (id, formData) => {
     return data;
   } catch (err) {
     console.error("Error updating game:", err);
+    throw err;
+  }
+};
+
+/* ====== PATCH ========  */
+
+// Update score
+export const updateScore = async (id, scoreData) => {
+  try {
+    const response = await fetch(`${API_URL}/team/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(scoreData),
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error updating score:", err);
     throw err;
   }
 };

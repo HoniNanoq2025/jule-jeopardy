@@ -1,9 +1,11 @@
 .tileContainer {
   position: relative;
-  height: 8rem;
+  height: 7rem;
   cursor: pointer;
   perspective: 1000px;
   perspective-origin: center;
+  width: 160px;
+  overflow: hidden;
 }
 
 .trianglePrismEffect {
@@ -22,13 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  background: linear-gradient(
-    135deg,
-    rgb(154, 42, 72) 0%,
-    rgb(155, 28, 31) 100%
-  );
-  border-radius: 0.5rem;
+  background: var(--deepCrimson);
   box-shadow: 0 10px 15px -3px rgb(0, 0, 0, 0.1);
   backface-visibility: hidden;
 }
@@ -47,7 +43,7 @@
 
 .pointValue {
   color: var(--lightBeige);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -57,15 +53,19 @@
 }
 
 .questionContent {
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 0.9rem;
 }
 
 .answerTitle {
   font-size: 0.875rem;
-  color: #fde047;
+  font-weight: bold;
+  color: var(--metallicGold);
   margin-bottom: 0.5rem;
 }
 
 .answerContent {
-  font-size: 1.125rem;
+  font-size: 0.9rem;
+  padding-left: 5px;
+  padding-right: 5px;
 }
