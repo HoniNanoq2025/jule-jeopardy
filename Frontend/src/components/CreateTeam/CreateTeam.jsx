@@ -11,7 +11,7 @@ export default function CreateTeam({ onCreateTeam }) {
     fetch("https://jeopardy-gkiyb.ondigitalocean.app/teams/images")
       .then((res) => res.json())
       .then((data) => {
-        console.log("API Response:", data); 
+        console.log("API Response:", data);
         setImages(data);
       })
       .catch((err) => console.error("Fetch error:", err));
@@ -22,7 +22,7 @@ export default function CreateTeam({ onCreateTeam }) {
 
     const newTeam = {
       name: teamName,
-      image: selectedImage
+      image: selectedImage,
     };
 
     onCreateTeam(newTeam);
@@ -31,18 +31,19 @@ export default function CreateTeam({ onCreateTeam }) {
   };
 
   return (
-      <div className={styles.createTeam}>
-      <h2>Hold navn</h2>
-
-      <input
-        type="text"
-        placeholder="Skriv holdnavn..."
-        value={teamName}
-        onChange={(e) => setTeamName(e.target.value)}
-      />
+    <div className={styles.createTeam}>
+      <div className={styles.headerContainer}>
+        <input
+          className={styles.input}
+          type="text"
+          placeholder="Skriv holdnavn..."
+          value={teamName}
+          onChange={(e) => setTeamName(e.target.value)}
+          required
+        />
+      </div>
 
       <div className={styles.imageGrid}>
-
         {images.map((img) => (
           <img
             key={img.id}
@@ -53,7 +54,11 @@ export default function CreateTeam({ onCreateTeam }) {
         ))}
       </div>
 
-      <Button onButtonClick={handleSubmit} disabled={!teamName || !selectedImage} buttonText="Tilføj hold" />
+      <Button
+        onButtonClick={handleSubmit}
+        disabled={!teamName || !selectedImage}
+        buttonText="Tilføj hold"
+      />
     </div>
   );
 }
