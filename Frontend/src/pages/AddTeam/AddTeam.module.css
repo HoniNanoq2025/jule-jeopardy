@@ -8,6 +8,16 @@
   height: calc(100vh - 130px); /* calculære skærm højde og minus footer */
 }
 
+.createTeamContainer {
+  position: relative; /* stadig ovenpå sneen */
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end; /* skubber indholdet til højre */
+  align-items: center;
+  height: 100%;
+  padding-right: 50px; /* luft ind fra højre kant - hvis mere luft så ændre px */
+}
+
 /* Sne-lag */
 .containerStylesTeam::before {
   content: ""; /* nødvendigt for at pseudo-elementet vises */
@@ -33,16 +43,6 @@
 
   /* sneen animeres nedad i loop */
   animation: snowFall 5s linear infinite; /* hurtigt, men smooth */
-}
-
-.createTeamContainer {
-  position: relative; /* stadig ovenpå sneen */
-  z-index: 1;
-  display: flex;
-  justify-content: flex-end; /* skubber indholdet til højre */
-  align-items: center;
-  height: 100%;
-  padding-right: 50px; /* luft ind fra højre kant - hvis mere luft så ændre px */
 }
 
 @keyframes snowFall {
