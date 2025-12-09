@@ -1,0 +1,71 @@
+.container{
+  background-image: url(../../assets/img/background-img/background_img_Forms.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+text-align: center;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.form {
+  padding:40px;
+  
+  
+  
+  
+}
+
+.formInput{
+  padding: 30px;
+
+  
+
+}
+
+
+
+
+.formInput div{
+  padding: 10px;
+  
+  
+
+}
+
+
+
+
+.formNext{
+  display: flex;
+  gap:5px;
+  margin:8px;
+  
+}
+
+
+
+button {
+  margin:20px;
+}
+
+.selectGame{
+  
+  width: 80%;
+  padding:10px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  padding: 20px;
+
+}
+
+
+
+
+
