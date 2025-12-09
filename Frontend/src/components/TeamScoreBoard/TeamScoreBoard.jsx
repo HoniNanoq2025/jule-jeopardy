@@ -16,6 +16,7 @@ export default function TeamScoreBoard({ teams }) {
               className={styles.teamMascot}
             />
           </div>
+          <div className={styles.teamScoreboard}></div>
         </div>
       ))}
     </div>
