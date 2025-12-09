@@ -17,18 +17,38 @@ export default function CreateTeam({ onCreateTeam }) {
       .catch((err) => console.error("Fetch error:", err));
   }, []);
  
-  const handleSubmit = () => {
-    if (!teamName || !selectedImage) return;
- 
-    const newTeam = {
-      name: teamName,
-      image: selectedImage,
-    };
- 
-    onCreateTeam(newTeam);
+  const handleSubmit = async () => {
+  if (!teamName || !selectedImage) return;
+
+  const newTeam = {
+    name: teamName,
+    image: selectedImage,
+  };
+
+  try {
+    const res = await fetch("https://jeopardy-gkiyb.ondigitalocean.app/team", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTeam),
+    });
+
+    if (!res.ok) throw new Error("Failed to create team");
+
+    const savedTeam = await res.json();
+    console.log("Team created:", savedTeam);
+
+    // Pass the saved team (with id) to parent
+    if (onCreateTeam) {
+      onCreateTeam(savedTeam);
+    }
+
     setTeamName("");
     setSelectedImage(null);
-  };
+  } catch (err) {
+    console.error("Error creating team:", err);
+  }
+};
+
  
   return (
     <div className={styles.createTeam}>
