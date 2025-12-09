@@ -1,0 +1,59 @@
+.scoreboardContainer {
+  width: 750px;
+  height: 330px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.imageContainer {
+  position: relative;
+  height: 140px;
+  width: 140px;
+  background-color: var(--deepCrimson);
+  border: none;
+  border-radius: 45%;
+  margin-bottom: -20px;
+  z-index: 1;
+}
+
+.imageContainer > img {
+  position: relative;
+  height: 140px;
+  width: 140px;
+  border-radius: 45%;
+  margin-bottom: -20px;
+  z-index: 1;
+}
+
+.teamScoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: black;
+  background-color: var(--lightBeige);
+  height: 212px;
+  padding: 10px;
+  text-align: center;
+  z-index: 3;
+}
+
+.divider {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.scoreButtons {
+  margin-top: 20px;
+}
+
+.scoreButtons > img {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
