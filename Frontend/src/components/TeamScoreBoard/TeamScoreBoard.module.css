@@ -38,6 +38,7 @@
   color: black;
   background-color: var(--lightBeige);
   height: 212px;
+  width: 140px;
   padding: 10px;
   text-align: center;
   z-index: 3;
