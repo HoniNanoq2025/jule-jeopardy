@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useGame } from "../../context/GameContext";
+import { updateScore } from "../../hooks/fetch";
 import plusImage from "../../assets/img/PlusPakke.png";
 import minusImage from "../../assets/img/MinusPakke.png";
 import styles from "./TeamScoreBoard.module.css";
@@ -12,16 +13,19 @@ export default function TeamScoreBoard({ teams }) {
     if (!lastValue) return;
 
     const newScore = isCorrect
-      ? team.score + lastValue
-      : team.score - lastValue;
+      ? (team.score || 0) + lastValue
+      : (team.score || 0) - lastValue;
 
     try {
       // Opdatér backend
       await updateScore(team._id, { score: newScore });
 
       // Opdater Frontend state
-      setTeamState((prev) =>
-        prev.map((t) => (t._id === team._id ? { ...t, score: newScore } : t))
+      setTeamState(
+        (
+          prev // prev = old teams array
+        ) =>
+          prev.map((t) => (t._id === team._id ? { ...t, score: newScore } : t))
       );
     } catch (err) {
       console.error("Could not update score:", err);
