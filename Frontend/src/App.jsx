@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import StartSpilForside from "./pages/StartSpilForside/StartSpilForside";
@@ -10,8 +9,10 @@ import AddTeam from "./pages/AddTeam/AddTeam";
 import ChooseGame from "./pages/ChooseGame/ChooseGame";
 import Jeopardy from "./pages/Jeopardy/Jeopardy";
 import EditGame from "./pages/EditGame/EditGame";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./App.module.css";
- 
+
 export default function App() {
   return (
     <div className={styles.app}>
@@ -28,9 +29,10 @@ export default function App() {
           <Route path="/edit-game" element={<EditGame />} />
         </Routes>
       </main>
- 
+
       <Footer />
+
+      <ToastContainer />
     </div>
   );
 }
- 

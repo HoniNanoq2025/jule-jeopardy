@@ -1,55 +1,58 @@
 import { useEffect, useState } from "react";
-import styles from "./CreateTeam.module.css";
+import { fetchTeamImages, createTeam } from "../../hooks/fetch";
 import Button from "../Button/Button";
- 
+import { toast } from "react-toastify";
+import styles from "./CreateTeam.module.css";
+
 export default function CreateTeam({ onCreateTeam }) {
   const [teamName, setTeamName] = useState("");
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
- 
-  useEffect(() => {
-    fetch("https://jeopardy-gkiyb.ondigitalocean.app/teams/images")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("API Response:", data);
-        setImages(data);
-      })
-      .catch((err) => console.error("Fetch error:", err));
-  }, []);
- 
-  const handleSubmit = async () => {
-  if (!teamName || !selectedImage) return;
 
-  const newTeam = {
-    name: teamName,
-    image: selectedImage,
+  // ==== HENT BILLEDER ======
+  useEffect(() => {
+    const loadImages = async () => {
+      try {
+        const data = await fetchTeamImages();
+        setImages(data);
+      } catch (err) {
+        console.error("Error fetching images:", err);
+      }
+    };
+
+    loadImages();
+  }, []);
+
+  // ===== OPRET HOLD =====
+
+  const handleSubmit = async () => {
+    if (!teamName || !selectedImage) return;
+
+    try {
+      const newTeam = {
+        name: teamName,
+        image: selectedImage,
+      };
+
+      const savedTeamResponse = await createTeam(newTeam);
+
+      // If your API wraps the team in `data`
+      const savedTeam = savedTeamResponse.data || savedTeamResponse;
+
+      toast.success("Holdet er oprettet!");
+      console.log("Team created:", savedTeam);
+
+      if (onCreateTeam) {
+        onCreateTeam(savedTeam);
+      }
+
+      setTeamName("");
+      setSelectedImage(null);
+    } catch (err) {
+      console.error("Error creating team:", err);
+    }
   };
 
-  try {
-    const res = await fetch("https://jeopardy-gkiyb.ondigitalocean.app/team", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newTeam),
-    });
-
-    if (!res.ok) throw new Error("Failed to create team");
-
-    const savedTeam = await res.json();
-    console.log("Team created:", savedTeam);
-
-    // Pass the saved team (with id) to parent
-    if (onCreateTeam) {
-      onCreateTeam(savedTeam);
-    }
-
-    setTeamName("");
-    setSelectedImage(null);
-  } catch (err) {
-    console.error("Error creating team:", err);
-  }
-};
-
- 
   return (
     <div className={styles.createTeam}>
       <div className={styles.headerContainer}>
@@ -62,7 +65,7 @@ export default function CreateTeam({ onCreateTeam }) {
           required
         />
       </div>
- 
+
       <div className={styles.imageGrid}>
         {images.map((img) => (
           <img
@@ -70,10 +73,11 @@ export default function CreateTeam({ onCreateTeam }) {
             src={img.url}
             className={selectedImage === img.url ? styles.selected : ""}
             onClick={() => setSelectedImage(img.url)}
+            alt="Team billede"
           />
         ))}
       </div>
- 
+
       <Button
         onButtonClick={handleSubmit}
         disabled={!teamName || !selectedImage}

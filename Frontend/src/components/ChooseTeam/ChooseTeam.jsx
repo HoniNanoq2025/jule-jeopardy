@@ -2,19 +2,8 @@ import { useEffect, useState } from "react";
 import styles from "./ChooseTeam.module.css";
 import Button from "../Button/Button";
 
-export default function ChooseTeam({ onChooseTeam }) {
-  const [teams, setTeams] = useState([]);
+export default function ChooseTeam({ teams, onChooseTeam }) {
   const [selectedTeam, setSelectedTeam] = useState(null);
-
-  useEffect(() => {
-    fetch("https://jeopardy-gkiyb.ondigitalocean.app/teams")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched teams:", data);
-        setTeams(data.data); // ✅ FIX HERE
-      })
-      .catch((err) => console.error("Fetch error:", err));
-  }, []);
 
   const handleChoose = () => {
     if (!selectedTeam) return;
