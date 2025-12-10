@@ -4,7 +4,6 @@ import { fetchAllTeams } from "../../hooks/fetch";
 import CreateTeam from "../../components/CreateTeam/CreateTeam";
 import ChooseTeam from "../../components/ChooseTeam/ChooseTeam";
 import Button from "../../components/Button/Button";
-import { toast } from "react-toastify";
 import styles from "./AddTeam.module.css";
 
 export default function AddTeam() {
@@ -57,7 +56,7 @@ export default function AddTeam() {
       </div>
 
       <div className={styles.startGame}>
-        {gameId && (
+        {gameId && teamsAdded && (
           <div className={styles.startButtonContainer}>
             <Button
               onButtonClick={handleStartGame}
