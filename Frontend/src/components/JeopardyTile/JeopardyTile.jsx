@@ -4,7 +4,9 @@ import { useGame } from "../../context/GameContext"; //import af context
 import styles from "./JeopardyTile.module.css";
 
 export default function JeopardyTile({ value, question, answer }) {
-  const tileId = `tile_${question}_${value}`;
+  const tileId = `tile_${question}_${value}`; // Skab individuelle id'er til tiles
+
+  // Initialiserer state med værdi fra localStorage hvis den findes – ellers bruges standardværdien "value"
   const [state, setState] = useState(() => {
     const saved = localStorage.getItem(tileId);
     return saved || "value";
@@ -12,6 +14,7 @@ export default function JeopardyTile({ value, question, answer }) {
 
   const { setLastValue } = useGame(); // Hentes direkte fra context
 
+  // Gemmer den aktuelle state i localStorage, hver gang state eller tileId ændres
   useEffect(() => {
     localStorage.setItem(tileId, state);
   }, [state, tileId]);
@@ -34,7 +37,7 @@ export default function JeopardyTile({ value, question, answer }) {
     <div className={styles.tileContainer} onClick={handleClick}>
       <motion.div
         className={styles.trianglePrismEffect}
-        animate={{ rotateY: rotation }}
+        animate={{ rotateY: rotation }} // Rotation animation på Y-aksen
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         {/* Side 1 - POINT VÆRDI */}
