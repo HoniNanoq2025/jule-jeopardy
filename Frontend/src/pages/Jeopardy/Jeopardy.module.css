@@ -14,6 +14,10 @@
   background-color: var(--christmasGreen);
 }
 
+.loadingContainer > h2 {
+  color: var(--lightBeige);
+}
+
 .jeopardyContainer {
   background-color: var(--lightBeige);
   width: 1100px;
@@ -29,6 +33,11 @@
   color: var(--deepCrimson);
 }
 
+.noCategories {
+  text-align: center;
+  padding: 20px;
+}
+
 .scoreContainer {
   display: flex;
   flex-direction: row;
@@ -36,6 +45,10 @@
   align-items: center;
   margin-top: 12px;
   gap: 12px;
+}
+
+.noTeams {
+  color: var(--lightBeige);
 }
 
 .buttonContainer {

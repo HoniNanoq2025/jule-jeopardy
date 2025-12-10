@@ -1,10 +1,28 @@
 // ...existing code...
-import React, { useState } from "react";
-import styles from "./ChooseGame.module.css";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { fetchAllGames } from "../../hooks/fetch";
 import Button from "../../components/Button/Button.jsx";
+import styles from "./ChooseGame.module.css";
 
 export default function ChooseGame() {
+  const [games, setGames] = useState([]);
   const [selectedGame, setSelectedGame] = useState("");
+  const navigate = useNavigate();
+
+  //Hent alle spil
+  useEffect(() => {
+    const loadGames = async () => {
+      try {
+        const data = await fetchAllGames();
+        setGames(data.data || data);
+      } catch (err) {
+        console.error("Error fetching all games:", err);
+      }
+    };
+
+    loadGames();
+  }, []);
 
   const handleSubmit = (action = "start") => {
     if (!selectedGame) {
@@ -12,11 +30,11 @@ export default function ChooseGame() {
       return;
     }
     if (action === "start") {
-      console.log("Starting game:", selectedGame);
-      alert(`Starter spil: ${selectedGame}`);
+      // Navigér til AddTeam med spil-id
+      navigate(`/add-team/${selectedGame}`);
     } else {
-      console.log("Editing game:", selectedGame);
-      alert(`Redigerer spil: ${selectedGame}`);
+      // Navigér til EditGame
+      navigate(`/edit-game/${selectedGame}`);
     }
   };
 
@@ -28,7 +46,11 @@ export default function ChooseGame() {
         onChange={(e) => setSelectedGame(e.target.value)}
       >
         <option value="">vælg et spil</option>
-        
+        {games.map((game) => (
+          <option key={game._id} value={game._id}>
+            {game.name || `Spil ${game._id}`}
+          </option>
+        ))}
       </select>
 
       <Button
