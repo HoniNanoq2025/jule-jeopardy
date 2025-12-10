@@ -1,67 +1,61 @@
 .createTeam {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-right: 20px;
-  width: 100%;
-  max-width: 420px;
-  margin-left: auto;
-  margin-right: 100px;
-  box-sizing: border-box;
-  margin-bottom: 15px;
+  padding: 16px; /* indre luft omkring indholdet */
+  display: flex; /* flex layout */
+  flex-direction: column; /* elementer stables lodret */
+  align-items: center; /* centrerer indholdet horisontalt */
+  gap: 18px; /* afstand mellem elementer */
+  box-sizing: border-box; /* inkluderer padding i width */
 }
- 
+
 .createTeam input {
-  width: 100%;
-  padding: 12px;
-  font-family: "Poppins";
-  text-align: center;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 2px solid var(--lightBeige);
+  max-width: 80%; /* input størrelse*/
+  padding: 14px; /* indre luft */
+  font-family: "Poppins"; /* font */
+  text-align: center; /* centreret tekst */
+  font-size: 15px; /* tekststørrelse */
+  border-radius: 10px; /* afrundede hjørner */
+  border: 1px solid var(--lightBeige); /* lys beige kant */
+  color: var(--deepCrimson); /* rødfarve i input */
 }
- 
+
 .headerContainer {
-  background: var(--lightBeige);
-  border-radius: 16px;
-  padding: 10px;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: var(--lightBeige); /* lys beige baggrund */
+  border-radius: 16px; /* afrundede hjørner */
+  padding: 10px; /* indre luft */
+  width: 100%; /* fylder hele bredden */
+  height: 80px; /* fast højde */
+  display: flex; /* flex layout */
+  justify-content: center; /* centrerer horisontalt */
+  align-items: center; /* centrerer vertikalt */
 }
- 
+
 .imageGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  background-color: var(--lightBeige);
-  border-radius: 16px;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  justify-items: center;
-  align-items: center;
+  display: grid; /* grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+  gap: 14px; /* afstand mellem billeder */
+  background-color: var(--lightBeige); /* lys beige baggrund */
+  border-radius: 16px; /* afrundede hjørner */
+  width: 100%; /* fylder hele bredden */
+  padding: 10px; /* indre luft */
+  justify-items: center; /* centrerer billeder horisontalt */
+  align-items: center; /* centrerer billeder vertikalt */
 }
- 
+
 .imageGrid img {
-  cursor: pointer;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  width: 70px;
-  height: 70px;
-  background-color: var(--deepCrimson);
+  cursor: pointer; /* klikbart billede */
+  border-radius: 50%; /* runde ikoner */
+  border: 3px solid transparent; /* neutral kant */
+  width: 70px; /* bredde */
+  height: 70px; /* højde */
+  background-color: var(--deepCrimson); /* dyb rød baggrund */
 }
- 
+
 .imageGrid img.selected {
-  border-color: var(--christmasGreen);
-  box-shadow: 0 0 10px var(--christmasGreen);
+  border-color: var(--christmasGreen); /* grøn kant */
+  box-shadow: 0 0 10px var(--christmasGreen); /* glow-effekt */
 }
- 
+
 .createTeam button {
-  width: 100%;
-  padding: 12px;
+  width: 100%; /* knappen fylder hele bredden */
+  padding: 12px; /* indre luft */
 }
