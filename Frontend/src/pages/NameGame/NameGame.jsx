@@ -1,42 +1,51 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./NameGame.module.css";
 import Button from "../../components/Button/Button";
+import { useState } from "react";
 
 export default function NameGame() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [gameName, setGameName] = useState("");
 
-  const navigateNewGame = ()=>{
-    navigate("/create-category")
-  }
+  const handleChange = (e) => {
+    setGameName(e.target.value);
+  };
 
-  return (
+  const saveGame = () => {
+    if (!gameName.trim()) return;
 
-    <div className={styles.gameName}>
+    
+    const existing = JSON.parse(localStorage.getItem("games") || "[]");
 
-      <div className={styles.gameNameContainer}>
-      
-      
-
-      <div>
-
-<input type="text" placeholder="Giv spillet et navn..."/></div>
-
-<div>
-
-<Button buttonText="Tilføj kategorier" onButtonClick={navigateNewGame}/>
-
-</div>
-
-</div>
-
-
-    </div>
-
-
+    
+    existing.push(gameName);
 
   
+    localStorage.setItem("games", JSON.stringify(existing));
 
-  )
+    
+    navigate("/create-category");
+  };
 
+  return (
+    <div className={styles.gameName}>
+      <div className={styles.gameNameContainer}>
+        
+        <div>
+          <input 
+            type="text" 
+            placeholder="Giv spillet et navn..." 
+            value={gameName}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <Button buttonText="Tilføj kategorier" onButtonClick={saveGame}/>
+        </div>
+
+      </div>
+    </div>
+  );
 }
