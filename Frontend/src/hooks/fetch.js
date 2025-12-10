@@ -126,7 +126,7 @@ export const updateTeam = async (formData) => {
   }
 };
 
-// Update Team
+// Update Game
 export const updateGame = async (id, formData) => {
   try {
     const response = await fetch(`${API_URL}/game/${id}`, {
