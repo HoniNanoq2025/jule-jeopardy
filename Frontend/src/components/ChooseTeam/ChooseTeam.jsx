@@ -31,9 +31,7 @@ export default function ChooseTeam({ teams, onChooseTeam, gameId }) {
       try {
         setLoading(true);
 
-        // Log for debugging
         const teamIds = selectedTeams.map((team) => team._id);
-        console.log("Sending teams:", teamIds);
 
         // Prøv forskellige strukturer
         await addTeams(gameId, { teamIds: teamIds });
