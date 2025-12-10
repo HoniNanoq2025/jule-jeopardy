@@ -48,7 +48,7 @@ const navigate = useNavigate();
       <div className={styles.container}>
         <div className={styles.form}>
   
-          <h2>Skab ny kategori</h2>
+          <h2>ændere dine kalgoriere</h2>
   
           <div>
   
@@ -58,7 +58,7 @@ const navigate = useNavigate();
             value={selectedGame}
             onChange={(e) => setSelectedGame(e.target.value)}
           >
-            <option value="">vælg spil</option>
+            <option value="">vælg kalgoriere</option>
             {games.map((game, index) => (
               <option key={index} value={game}>{game}</option>
             ))}
@@ -98,7 +98,7 @@ const navigate = useNavigate();
             </div>
           ))}
   
-          <Button buttonText="Tilføj" onButtonClick={saveCategory} />
+          <Button buttonText="update" onButtonClick={saveCategory} />
         </div>
       </div>
     );
