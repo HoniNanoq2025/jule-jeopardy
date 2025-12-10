@@ -1,19 +1,14 @@
 .chooseTeam {
   padding: 16px; /* indre luft omkring indholdet */
-  display: flex; /* flex layout til kolonne */
+  display: flex; /* flex layout */
   flex-direction: column; /* elementer stables lodret */
   align-items: center; /* centrerer indholdet horisontalt */
   gap: 18px; /* afstand mellem elementer */
-  margin-left: auto; /* skubber containeren ind fra venstre */
-  margin-right: 100px; /* luft ind fra højre kant */
-  width: 100%; /* fylder hele bredden */
-  max-width: 420px; /* begrænser bredden */
   box-sizing: border-box; /* inkluderer padding i width */
-  margin-bottom: 15px; /* luft under containeren */
 }
 
 .chooseTeam h2 {
-  background: var(--lightBeige);
+  background: var(--lightBeige); /* lys beige baggrund */
   border-radius: 16px; /* afrundede hjørner */
   padding: 10px; /* indre luft */
   width: 100%; /* fylder hele bredden */
@@ -21,9 +16,7 @@
   display: flex; /* flex layout */
   justify-content: center; /* centrerer teksten horisontalt */
   align-items: center; /* centrerer teksten vertikalt */
-  font-size: 26px; /* tekststørrelse */
   color: var(--deepCrimson); /* dyb rød tekstfarve */
-  font-family: "Poppins"; /* font */
 }
 
 .teamList {
@@ -35,6 +28,12 @@
   width: 100%; /* fylder hele bredden */
   padding: 10px; /* indre luft */
   box-sizing: border-box; /* inkluderer padding i width */
+
+  /* Scrollbar-styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--deepCrimson) var(--snowGray);
+  max-height: 340px; /* samme som højre side */
+  overflow-y: auto; /* scroll hvis der er for mange teams */
 }
 
 .teamItem {
@@ -43,8 +42,8 @@
   gap: 14px; /* afstand mellem ikon og tekst */
   padding: 10px; /* indre luft */
   border-radius: 12px; /* afrundede hjørner */
-  background-color: var(--snowGray); /* grå baggrund til team-række */
-  cursor: pointer; /* viser klikbar */
+  background-color: var(--snowGray); /* grå baggrund */
+  cursor: pointer; /* klikbar */
 }
 
 .teamItem img {
@@ -58,15 +57,14 @@
 
 .teamItem p {
   font-size: 19px; /* tekststørrelse */
-  color: white; /* hvid tekst */
-  font-family: "Poppins"; /* font */
+  color: black; /* sort tekst */
   margin: 0; /* ingen ekstra margin */
   flex-grow: 1; /* fylder resten af pladsen */
 }
 
 .selected {
-  border: 2px solid var(--christmasGreen); /* grøn kant ved valgt team */
-  box-shadow: 0 0 10px var(--christmasGreen); /* grøn glow-effekt */
+  border-color: var(--christmasGreen); /* grøn kant */
+  box-shadow: 0 0 10px var(--christmasGreen); /* glow-effekt */
 }
 
 .chooseTeam button {

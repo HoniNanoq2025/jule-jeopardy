@@ -6,16 +6,19 @@
   position: relative; /* vigtigt for sne-overlay */
   overflow: hidden;
   height: calc(100vh - 130px); /* calculære skærm højde og minus footer */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 160px; /* styrer afstanden mellem venstre og højre */
+  align-items: center;
 }
 
+.chooseTeamContainer,
 .createTeamContainer {
-  position: relative; /* stadig ovenpå sneen */
+  flex: 1;
+  max-width: 420px;
   z-index: 1;
-  display: flex;
-  justify-content: flex-end; /* skubber indholdet til højre */
-  align-items: center;
-  height: 100%;
-  padding-right: 50px; /* luft ind fra højre kant - hvis mere luft så ændre px */
 }
 
 /* Sne-lag */
