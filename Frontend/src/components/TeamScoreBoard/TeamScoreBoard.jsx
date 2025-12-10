@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useGame } from "../../context/GameContext";
 import { updateScore } from "../../hooks/fetch";
 import plusImage from "../../assets/img/PlusPakke.png";
@@ -9,6 +9,10 @@ export default function TeamScoreBoard({ teams }) {
   const [teamState, setTeamState] = useState(teams);
   const { lastValue } = useGame();
 
+  useEffect(() => {
+    setTeamState(teams);
+  }, [teams]);
+
   const handleScore = async (team, isCorrect) => {
     if (!lastValue) return;
 
@@ -16,25 +20,22 @@ export default function TeamScoreBoard({ teams }) {
       ? (team.score || 0) + lastValue
       : (team.score || 0) - lastValue;
 
+    setTeamState((prev) =>
+      prev.map((t) => (t._id === team._id ? { ...t, score: newScore } : t))
+    );
+
     try {
       // Opdatér backend
       await updateScore(team._id, { score: newScore });
-
-      // Opdater Frontend state
-      setTeamState(
-        (
-          prev // prev = old teams array
-        ) =>
-          prev.map((t) => (t._id === team._id ? { ...t, score: newScore } : t))
-      );
     } catch (err) {
       console.error("Could not update score:", err);
+      setTeamState(teams);
     }
   };
 
   return (
     <div className={styles.scoreboardContainer}>
-      {teams.map((team) => (
+      {teamState.map((team) => (
         <div key={team._id} className={styles.team}>
           <div className={styles.imageContainer}>
             <img
