@@ -9,12 +9,20 @@ export default function ChooseTeam({ teams, onChooseTeam, gameId }) {
   const [loading, setLoading] = useState(false);
 
   // Toggle team selection (multi-select)
+  // Denne funktion håndterer når et team klikkes - tilføjer eller fjerner det fra valgte teams
   const toggleTeamSelection = (team) => {
     setSelectedTeams((prev) => {
+      // Tjek om teamet allerede er valgt ved at sammenligne _id
+      // .some() returnerer true hvis mindst ét element matcher betingelsen
       const isSelected = prev.some((t) => t._id === team._id);
+
       if (isSelected) {
+        // Hvis teamet allerede er valgt, fjern det fra listen
+        // .filter() beholder kun teams der IKKE matcher det klikkede team
         return prev.filter((t) => t._id !== team._id);
       } else {
+        // Hvis teamet ikke er valgt, tilføj det til listen
+        // Spread operator [...prev, team] laver en ny array med alle eksisterende + det nye team
         return [...prev, team];
       }
     });
