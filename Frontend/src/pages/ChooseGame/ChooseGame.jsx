@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAllGames } from "../../hooks/fetch";
 import Button from "../../components/Button/Button.jsx";
+import { FaDownLong } from "react-icons/fa6";
+
 import styles from "./ChooseGame.module.css";
 
 export default function ChooseGame() {
@@ -41,6 +43,7 @@ export default function ChooseGame() {
   };
 
   return (
+
     <div className={styles.choosegamePage}>
       {/* Dropdown til at vælge et spil */}
       <select
