@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import styles from "./ChooseGame.module.css";
 import Button from "../../components/Button/Button.jsx";
+import { FaDownLong } from "react-icons/fa6";
+
 
 export default function ChooseGame() {
   const [selectedGame, setSelectedGame] = useState("");
@@ -21,26 +23,33 @@ export default function ChooseGame() {
   };
 
   return (
-    <div className={styles.choosegamePage}>
-      <select
-        className={styles.gameSelect}
-        value={selectedGame}
-        onChange={(e) => setSelectedGame(e.target.value)}
-      >
-        <option value="">vælg et spil</option>
-        
-      </select>
 
-      <Button
-        onButtonClick={() => handleSubmit("start")}
-        disabled={!selectedGame}
-        buttonText="Start spil"
-      />
-      <Button
-        onButtonClick={() => handleSubmit("edit")}
-        disabled={!selectedGame}
-        buttonText="Rediger spil"
-      />
-    </div>
+    <div className={styles.choosegamePage}>
+
+  <div className={styles.selectWrapper}>
+    <select
+      className={styles.gameSelect}
+      value={selectedGame}
+      onChange={(e) => setSelectedGame(e.target.value)}
+    >
+      <option value="">Vælg et spil</option>
+    </select>
+
+    <FaDownLong className={styles.arrowIcon} />
+  </div>
+
+  <Button
+    onButtonClick={() => handleSubmit("start")}
+    disabled={!selectedGame}
+    buttonText="Start spil"
+  />
+  <Button
+    onButtonClick={() => handleSubmit("edit")}
+    disabled={!selectedGame}
+    buttonText="Rediger spil"
+  />
+
+</div>
+
   );
 }

@@ -12,22 +12,42 @@
   background-position: center;
 }
 
+.selectWrapper {
+  position: relative;
+  width: 380px;
+}
 
 .gameSelect {
-  width: 380px;
+  width: 100%;
   padding: 18px 20px;
+  padding-right: 60px; 
   font-size: 24px;
   text-align: center;
+
   background-color: #f4eddc;
   border-radius: 12px;
   border: none;
-  appearance: none; 
-  cursor: pointer;
-  background-image: none;
-}
 
+  appearance: none;
+  cursor: pointer;
+}
 
 .gameSelect:focus {
   outline: none;
 }
 
+.arrowIcon {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 24px;
+  color: #2d6a32; 
+
+  pointer-events: none;
+}
+
+.selectWrapper:active .arrowIcon {
+  transform: translateY(calc(-50% + 3px));
+}
