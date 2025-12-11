@@ -146,22 +146,24 @@ export default function Jeopardy() {
   return (
     <GameProvider>
       <div className={styles.mainContainer}>
-        <div className={styles.jeopardyContainer}>
-          <div className={styles.gameHeader}>
-            <h1>{game.name}</h1>
+        <div className={styles.gameContainer}>
+          <div className={styles.scoreContainer}>
+            {teams.length > 0 ? (
+              <TeamScoreBoard teams={teams} />
+            ) : (
+              <p className={styles.noTeams}>Ingen teams tilføjet</p>
+            )}
           </div>
-          {categories.length > 0 ? (
-            <JeopardyGrid categories={categories} />
-          ) : (
-            <p className={styles.noCategories}>Ingen kategorier fundet!</p>
-          )}
-        </div>
-        <div className={styles.scoreContainer}>
-          {teams.length > 0 ? (
-            <TeamScoreBoard teams={teams} />
-          ) : (
-            <p className={styles.noTeams}>Ingen teams tilføjet</p>
-          )}
+          <div className={styles.jeopardyContainer}>
+            <div className={styles.gameHeader}>
+              <h1>{game.name}</h1>
+            </div>
+            {categories.length > 0 ? (
+              <JeopardyGrid categories={categories} />
+            ) : (
+              <p className={styles.noCategories}>Ingen kategorier fundet!</p>
+            )}
+          </div>
         </div>
         <div className={styles.buttonContainer}>
           <Button
