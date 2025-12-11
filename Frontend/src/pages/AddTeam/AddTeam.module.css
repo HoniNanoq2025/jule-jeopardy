@@ -5,7 +5,28 @@
   background-size: cover;
   position: relative; /* vigtigt for sne-overlay */
   overflow: hidden;
-  height: calc(100vh - 130px); /* calculære skærm højde og minus footer */
+  min-height: calc(100vh - 130px);
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.componentsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 160px; /* styrer afstanden mellem venstre og højre */
+  justify-content: center;
+  align-items: center;
+}
+
+.chooseTeamContainer,
+.createTeamContainer {
+  flex: 1;
+  max-width: 420px;
+  z-index: 1;
 }
 
 /* Sne-lag */
@@ -33,16 +54,6 @@
 
   /* sneen animeres nedad i loop */
   animation: snowFall 5s linear infinite; /* hurtigt, men smooth */
-}
-
-.createTeamContainer {
-  position: relative; /* stadig ovenpå sneen */
-  z-index: 1;
-  display: flex;
-  justify-content: flex-end; /* skubber indholdet til højre */
-  align-items: center;
-  height: 100%;
-  padding-right: 50px; /* luft ind fra højre kant - hvis mere luft så ændre px */
 }
 
 @keyframes snowFall {

@@ -1,9 +1,24 @@
 .mainContainer {
+  background-image: url(../../assets/img/background-img/bg-image-game.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 845px;
+  padding-top: 50px;
 }
 
 .loadingContainer {
@@ -14,10 +29,15 @@
   background-color: var(--christmasGreen);
 }
 
+.loadingContainer > h2 {
+  color: var(--lightBeige);
+}
+
 .jeopardyContainer {
   background-color: var(--lightBeige);
   width: 1100px;
-  margin: 50px 0;
+  padding-top: 5px;
+  margin: 50px 6px 20px 0;
   border: none;
   border-radius: 18px;
 }
@@ -27,4 +47,47 @@
   text-align: center;
   margin-bottom: 12px;
   color: var(--deepCrimson);
+}
+
+.noCategories {
+  text-align: center;
+  padding: 20px;
+}
+
+.scoreContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 320px;
+  min-height: 775px;
+  border: none;
+  border-radius: 18px;
+  margin-top: 50px;
+  margin-right: 6px;
+  margin-bottom: 20px;
+  gap: 12px;
+  background-color: var(--deepCrimson);
+}
+
+.noTeams {
+  color: var(--lightBeige);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.navigateBtn {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.resetButton {
+  width: 140px;
+  margin: 0 auto;
 }

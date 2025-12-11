@@ -65,12 +65,16 @@ export const fetchGameById = async (id) => {
 /* ====== POST ========  */
 
 // Create Team
-export const createTeam = async (formData) => {
+export const createTeam = async (newTeam) => {
   try {
     const response = await fetch(`${API_URL}/team`, {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTeam),
     });
+
     const data = await response.json();
     return data;
   } catch (err) {
@@ -80,14 +84,17 @@ export const createTeam = async (formData) => {
 };
 
 // Create Game
-export const createGame = async (formData) => {
+export const createGame = async (newGame) => {
   try {
     const response = await fetch(`${API_URL}/game`, {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newGame),
     });
-    const data = await response.json();
-    return data;
+
+    return await response.json();
   } catch (err) {
     console.error("Error creating Game:", err);
     throw err;
@@ -95,14 +102,17 @@ export const createGame = async (formData) => {
 };
 
 // Add teams
-export const addTeams = async (id, formData) => {
+export const addTeams = async (id, teams) => {
   try {
     const response = await fetch(`${API_URL}/game/${id}/add-teams`, {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(teams),
     });
-    const data = await response.json();
-    return data;
+
+    return await response.json();
   } catch (err) {
     console.error("Error when adding team to game:", err);
     throw err;
@@ -112,29 +122,35 @@ export const addTeams = async (id, formData) => {
 /* ====== PUT ========  */
 
 // Update Team
-export const updateTeam = async (formData) => {
+export const updateTeam = async (updatedTeam) => {
   try {
     const response = await fetch(`${API_URL}/team`, {
       method: "PUT",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedTeam),
     });
-    const data = await response.json();
-    return data;
+
+    return await response.json();
   } catch (err) {
     console.error("Error updating team:", err);
     throw err;
   }
 };
 
-// Update Team
-export const updateGame = async (id, formData) => {
+// Update Game
+export const updateGame = async (id, updatedGame) => {
   try {
-    const response = await fetch(`${API_URL}/game/${id}`, {
+    const response = await fetch(`${API_URL}/game`, {
       method: "PUT",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedGame),
     });
-    const data = await response.json();
-    return data;
+
+    return await response.json();
   } catch (err) {
     console.error("Error updating game:", err);
     throw err;

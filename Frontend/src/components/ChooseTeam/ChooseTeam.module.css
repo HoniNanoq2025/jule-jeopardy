@@ -1,0 +1,73 @@
+.chooseTeam {
+  padding: 16px; /* indre luft omkring indholdet */
+  display: flex; /* flex layout */
+  flex-direction: column; /* elementer stables lodret */
+  align-items: center; /* centrerer indholdet horisontalt */
+  gap: 18px; /* afstand mellem elementer */
+  box-sizing: border-box; /* inkluderer padding i width */
+}
+
+.chooseTeam h2 {
+  background: var(--lightBeige); /* lys beige baggrund */
+  border-radius: 16px; /* afrundede hjørner */
+  padding: 10px; /* indre luft */
+  width: 100%; /* fylder hele bredden */
+  height: 80px; /* fast højde */
+  display: flex; /* flex layout */
+  justify-content: center; /* centrerer teksten horisontalt */
+  align-items: center; /* centrerer teksten vertikalt */
+  color: var(--deepCrimson); /* dyb rød tekstfarve */
+}
+
+.teamList {
+  display: flex; /* flex layout */
+  flex-direction: column; /* lodret liste */
+  gap: 14px; /* afstand mellem teams */
+  background-color: var(--lightBeige); /* lys beige baggrund */
+  border-radius: 16px; /* afrundede hjørner */
+  width: 100%; /* fylder hele bredden */
+  padding: 10px; /* indre luft */
+  box-sizing: border-box; /* inkluderer padding i width */
+
+  /* Scrollbar-styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--deepCrimson) var(--snowGray);
+  max-height: 340px; /* samme som højre side */
+  overflow-y: auto; /* scroll hvis der er for mange teams */
+}
+
+.teamItem {
+  display: flex; /* flex layout til ikon + tekst */
+  align-items: center; /* centrerer vertikalt */
+  gap: 14px; /* afstand mellem ikon og tekst */
+  padding: 10px; /* indre luft */
+  border-radius: 12px; /* afrundede hjørner */
+  background-color: var(--snowGray); /* grå baggrund */
+  cursor: pointer; /* klikbar */
+}
+
+.teamItem img {
+  width: 48px; /* ikonbredde */
+  height: 48px; /* ikonhøjde */
+  border-radius: 50%; /* runde ikoner */
+  object-fit: cover; /* billedet fylder cirklen */
+  background-color: var(--deepCrimson); /* dyb rød baggrund */
+  border: 3px solid transparent; /* neutral kant */
+}
+
+.teamItem p {
+  font-size: 19px; /* tekststørrelse */
+  color: black; /* sort tekst */
+  margin: 0; /* ingen ekstra margin */
+  flex-grow: 1; /* fylder resten af pladsen */
+}
+
+.selected {
+  border-color: var(--christmasGreen); /* grøn kant */
+  box-shadow: 0 0 10px var(--christmasGreen); /* glow-effekt */
+}
+
+.chooseTeam button {
+  width: 100%; /* knappen fylder hele bredden */
+  padding: 12px; /* indre luft */
+}

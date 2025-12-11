@@ -1,33 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useGame } from "../../context/GameContext"; //import af context
 import styles from "./JeopardyTile.module.css";
 
 export default function JeopardyTile({ value, question, answer }) {
-  const [state, setState] = useState("value");
+  const tileId = `tile_${question}_${value}`; // Skab individuelle id'er til tiles
 
-  // Hentes direkte fra context
-  const { setLastValue } = useGame();
+  // Initialiserer state med værdi fra localStorage hvis den findes – ellers bruges standardværdien "value"
+  const [state, setState] = useState(() => {
+    const saved = localStorage.getItem(tileId);
+    return saved || "value";
+  });
+
+  const { setLastValue } = useGame(); // Hentes direkte fra context
+
+  // Gemmer den aktuelle state i localStorage, hver gang state eller tileId ændres
+  useEffect(() => {
+    localStorage.setItem(tileId, state);
+  }, [state, tileId]);
 
   // Beregn rotation basert på state (120 grader per side for at få trekant)
   const rotation = state === "value" ? 0 : state === "question" ? -120 : -240;
 
   const handleClick = () => {
-    setState((prev) => {
-      if (prev === "value") {
-        setLastValue(value); // Send point-værdi til context ved første klik
-        return "question";
-      }
-      if (prev === "question") return "answer";
-      return "answer";
-    });
+    if (state === "value") {
+      // Opdater begge states i separate calls
+      setState("question");
+      setLastValue(value); // Send point-værdi til context
+    } else if (state === "question") {
+      setState("answer");
+    }
+    // Hvis allerede på "answer", gør ingenting
   };
 
   return (
     <div className={styles.tileContainer} onClick={handleClick}>
       <motion.div
         className={styles.trianglePrismEffect}
-        animate={{ rotateY: rotation }}
+        animate={{ rotateY: rotation }} // Rotation animation på Y-aksen
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         {/* Side 1 - POINT VÆRDI */}
