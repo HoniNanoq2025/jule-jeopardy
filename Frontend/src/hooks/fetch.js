@@ -142,7 +142,7 @@ export const updateTeam = async (updatedTeam) => {
 // Update Game
 export const updateGame = async (id, updatedGame) => {
   try {
-    const response = await fetch(`${API_URL}/game/${id}`, {
+    const response = await fetch(`${API_URL}/game`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

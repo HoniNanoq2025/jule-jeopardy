@@ -5,7 +5,8 @@
   background-size: cover;
   position: relative; /* vigtigt for sne-overlay */
   overflow: hidden;
-  min-height: calc(100vh - 130px); /* calculære skærm højde og minus footer */
+  min-height: calc(100vh - 130px);
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
