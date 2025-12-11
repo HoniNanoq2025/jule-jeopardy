@@ -1,0 +1,33 @@
+.choosegamePage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  background-image: url("../../assets/img/background-img/ac21a97a-4588-4811-a828-f4d58cf3ae89.png");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.gameSelect {
+  width: 380px;
+  padding: 18px 20px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #f4eddc;
+  border-radius: 12px;
+  border: none;
+  appearance: none; 
+  cursor: pointer;
+  background-image: none;
+}
+
+
+.gameSelect:focus {
+  outline: none;
+}
+
