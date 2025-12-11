@@ -1,10 +1,9 @@
 .scoreboardContainer {
-  width: 750px;
-  height: 330px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  width: 320px;
   gap: 12px;
   margin-bottom: 50px;
 }
@@ -18,7 +17,7 @@
   position: relative;
   height: 105px;
   width: 105px;
-  background-color: var(--deepCrimson);
+  background-color: var(--christmasGreen);
   border: none;
   border-radius: 45%;
   margin-right: -20px;
