@@ -77,17 +77,21 @@
 .buttonContainer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 20px;
+  width: 100%;
+  gap:6px;
+  margin-left: 302px;
   margin-bottom: 50px;
 }
 .navigateBtn {
-  width: 140px;
-  margin: 0 auto;
+  background-color: var(--lightBeige);
+  color: var(--deepCrimson);
+  width: 220px;
+  margin: 0;
 }
 
 .resetButton {
-  width: 140px;
-  margin: 0 auto;
+  width: 220px;
+  margin: 0;
 }
