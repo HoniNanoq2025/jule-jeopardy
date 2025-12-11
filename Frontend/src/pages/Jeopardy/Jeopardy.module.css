@@ -17,6 +17,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  min-height: 845px;
+  padding-top: 50px;
 }
 
 .loadingContainer {
@@ -34,7 +36,8 @@
 .jeopardyContainer {
   background-color: var(--lightBeige);
   width: 1100px;
-  margin: 50px 0 20px;
+  padding-top: 5px;
+  margin: 50px 6px 20px 0;
   border: none;
   border-radius: 18px;
 }
@@ -57,8 +60,14 @@
   justify-content: center;
   align-items: center;
   max-width: 320px;
-  margin-top: 12px;
+  min-height: 775px;
+  border: none;
+  border-radius: 18px;
+  margin-top: 50px;
+  margin-right: 6px;
+  margin-bottom: 20px;
   gap: 12px;
+  background-color: var(--deepCrimson);
 }
 
 .noTeams {
