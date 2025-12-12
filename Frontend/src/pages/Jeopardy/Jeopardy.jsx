@@ -48,6 +48,46 @@ export default function Jeopardy() {
     }
   }, [gameId]);
 
+  // Tilføj starshine effekt til scoreContainer
+  useEffect(() => {
+    const scoreContainer = document.querySelector(`.${styles.scoreContainer}`);
+    if (!scoreContainer || loading) return;
+
+    // Opret starshine container
+    let starshine = scoreContainer.querySelector("#starshine");
+    if (!starshine) {
+      starshine = document.createElement("div");
+      starshine.id = "starshine";
+      starshine.className = styles.starshine;
+      scoreContainer.appendChild(starshine);
+    }
+
+    const stars = 200;
+    const sparkle = 20;
+    const sizes = ["small", "medium", "large"];
+
+    // Ryd eksisterende stjerner
+    starshine.innerHTML = "";
+
+    for (let i = 0; i < stars; i++) {
+      const star = document.createElement("div");
+      star.className = `${styles.shine} ${styles[sizes[i % 3]]}`;
+
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * sparkle}s`;
+
+      starshine.appendChild(star);
+    }
+
+    // Cleanup funktion
+    return () => {
+      if (starshine && starshine.parentNode) {
+        starshine.remove();
+      }
+    };
+  }, [loading, teams]);
+
   const handleResetGame = async () => {
     const confirmed = window.confirm(
       "Er du sikker på at du vil nulstille spillet? Dette vil slette alle scores og nulstille alle tiles."
