@@ -1,9 +1,24 @@
 .mainContainer {
+  background-image: url(../../assets/img/background-img/bg-image-game.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 845px;
+  padding-top: 50px;
 }
 
 .loadingContainer {
@@ -21,7 +36,8 @@
 .jeopardyContainer {
   background-color: var(--lightBeige);
   width: 1100px;
-  margin: 50px 0 20px;
+  padding-top: 5px;
+  margin: 50px 6px 20px 0;
   border: none;
   border-radius: 18px;
 }
@@ -43,8 +59,15 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
+  max-width: 320px;
+  min-height: 775px;
+  border: none;
+  border-radius: 18px;
+  margin-top: 50px;
+  margin-right: 6px;
+  margin-bottom: 20px;
   gap: 12px;
+  background-color: var(--deepCrimson);
 }
 
 .noTeams {
@@ -54,17 +77,21 @@
 .buttonContainer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 20px;
+  width: 100%;
+  gap:6px;
+  margin-left: 302px;
   margin-bottom: 50px;
 }
 .navigateBtn {
-  width: 140px;
-  margin: 0 auto;
+  background-color: var(--lightBeige);
+  color: var(--deepCrimson);
+  width: 220px;
+  margin: 0;
 }
 
 .resetButton {
-  width: 140px;
-  margin: 0 auto;
+  width: 220px;
+  margin: 0;
 }

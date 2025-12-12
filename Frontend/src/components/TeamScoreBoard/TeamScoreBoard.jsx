@@ -45,9 +45,11 @@ export default function TeamScoreBoard({ teams }) {
             />
           </div>
           <div className={styles.teamScoreboard}>
-            <h3 className={styles.teamName}>{team.name}</h3>
-            <hr className={styles.divider} />
-            <h3 className={styles.teamScore}>{team.score}</h3>
+            <div className={styles.teamInfo}>
+              <h3 className={styles.teamName}>{team.name}</h3>
+              <hr className={styles.divider} />
+              <h3 className={styles.teamScore}>{team.score}</h3>
+            </div>
             <div className={styles.scoreButtons}>
               <img
                 src={plusImage}

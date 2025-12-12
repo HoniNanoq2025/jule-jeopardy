@@ -56,6 +56,8 @@
 }
 
 .createTeam button {
-  width: 100%; /* knappen fylder hele bredden */
-  padding: 12px; /* indre luft */
+  width: 100%;
+  padding: 12px;
+  height: 70px;
+  margin-top: 60px;
 }

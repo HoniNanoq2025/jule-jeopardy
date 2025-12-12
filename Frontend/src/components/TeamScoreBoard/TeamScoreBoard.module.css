@@ -1,47 +1,57 @@
 .scoreboardContainer {
-  width: 750px;
-  height: 330px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 320px;
   gap: 12px;
   margin-bottom: 50px;
 }
 
+.team {
+  display: flex;
+  flex-direction: row;
+}
+
 .imageContainer {
   position: relative;
-  height: 140px;
-  width: 140px;
-  background-color: var(--deepCrimson);
+  height: 105px;
+  width: 105px;
+  background-color: var(--christmasGreen);
   border: none;
   border-radius: 45%;
-  margin-bottom: -20px;
+  margin-right: -20px;
   z-index: 1;
 }
 
 .imageContainer > img {
   position: relative;
-  height: 140px;
-  width: 140px;
+  height: 105px;
+  width: 105px;
   border-radius: 45%;
-  margin-bottom: -20px;
+  margin-right: -20px;
   z-index: 1;
 }
 
 .teamScoreboard {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   color: black;
   background-color: var(--lightBeige);
-  height: 212px;
-  width: 140px;
+  height: 105px;
+  width: 200px;
   padding: 10px;
   text-align: center;
   z-index: 3;
+}
+
+.teamInfo {
+  display: flex;
+  flex-direction: column;
+  width: 132px;
 }
 
 .divider {
@@ -50,11 +60,13 @@
 }
 
 .scoreButtons {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
 .scoreButtons > img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
 }
