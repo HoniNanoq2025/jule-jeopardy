@@ -9,6 +9,7 @@
   font-size: 20px;
   height: 70px;
   transition: background-color 0.3s ease;
+  z-index: 5;
 }
 
 .button:hover {
