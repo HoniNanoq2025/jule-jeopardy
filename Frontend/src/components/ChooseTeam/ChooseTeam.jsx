@@ -1,12 +1,17 @@
-import { useState } from "react";
-import { addTeams } from "../../hooks/fetch";
+import { useState, useEffect } from "react";
+import { addTeams, deleteTeam } from "../../hooks/fetch";
 import { toast } from "react-toastify";
 import styles from "./ChooseTeam.module.css";
 import Button from "../Button/Button";
 
 export default function ChooseTeam({ teams, onChooseTeam, gameId }) {
+  const [teamList, setTeamList] = useState(teams);
   const [selectedTeams, setSelectedTeams] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setTeamList(teams);
+  }, [teams]);
 
   // Toggle team selection (multi-select)
   // Denne funktion håndterer når et team klikkes - tilføjer eller fjerner det fra valgte teams
@@ -59,12 +64,39 @@ export default function ChooseTeam({ teams, onChooseTeam, gameId }) {
     }
   };
 
+  const handleDeleteTeam = async () => {
+    if (!selectedTeams || selectedTeams.length !== 1) {
+      toast.error("Vælg præcis ét hold at slette");
+      return;
+    }
+
+    const teamToDelete = selectedTeams[0];
+
+    try {
+      setLoading(true);
+
+      await deleteTeam(teamToDelete._id);
+      toast.success(`Holdet "${teamToDelete.name}" er slettet`);
+
+      // Fjern fra lokal liste
+      setTeamList((prev) => prev.filter((t) => t._id !== teamToDelete._id));
+
+      // Fjern markering
+      setSelectedTeams([]);
+    } catch (err) {
+      console.error("Error deleting team:", err);
+      toast.error("Kunne ikke slette holdet");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className={styles.chooseTeam}>
       <h2>Vælg hold</h2>
 
       <div className={styles.teamList}>
-        {teams.map((team) => (
+        {teamList.map((team) => (
           <div
             key={team._id}
             className={`${styles.teamItem} ${
@@ -86,11 +118,20 @@ export default function ChooseTeam({ teams, onChooseTeam, gameId }) {
         )}
       </div>
 
-      <Button
-        onButtonClick={handleChoose}
-        disabled={!selectedTeams || selectedTeams.length === 0 || loading}
-        buttonText={loading ? "Tilføjer..." : "Bekræft valg"}
-      />
+      <div className={styles.buttonContainer}>
+        <Button
+          onButtonClick={handleChoose}
+          disabled={!selectedTeams || selectedTeams.length === 0 || loading}
+          buttonText={loading ? "Tilføjer..." : "Bekræft valg"}
+          btnSize={styles.chooseBtn}
+        />
+
+        <Button
+          onButtonClick={handleDeleteTeam}
+          buttonText="Slet hold"
+          btnSize={styles.deleteBtn}
+        />
+      </div>
     </div>
   );
 }
