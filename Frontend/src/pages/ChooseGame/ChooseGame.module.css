@@ -1,6 +1,6 @@
 .choosegamePage {
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 130px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,17 +18,17 @@
 }
 
 .gameSelect {
-  width: 100%;
+  width: 400px;
   padding: 18px 20px;
   padding-right: 60px; 
   font-size: 24px;
   text-align: center;
+  z-index: 3;
 
   background-color: #f4eddc;
   border-radius: 12px;
   border: none;
 
-  appearance: none;
   cursor: pointer;
 }
 
@@ -50,4 +50,35 @@
 
 .selectWrapper:active .arrowIcon {
   transform: translateY(calc(-50% + 3px));
+}
+
+/* ❄️ Snow animation in the middle of the page */
+.choosegamePage::before {
+  content: "";
+  position: absolute;
+  top: 10%;              /* start snow around 30% down the page */
+  left: 0;
+  width: 100%;
+  height: 78%;           /* snow only covers middle 40% */
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+    radial-gradient(rgba(255, 255, 255, 0.6) 3px, transparent 3px),
+    radial-gradient(rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px);
+
+  background-size: 60px 60px, 100px 100px, 150px 150px;
+  background-repeat: repeat;
+
+  animation: snowFall 10s linear infinite;
+}
+
+@keyframes snowFall {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 400px, 0 500px, 0 600px;
+  }
 }
