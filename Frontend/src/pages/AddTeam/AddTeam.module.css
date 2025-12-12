@@ -29,6 +29,26 @@
   z-index: 1;
 }
 
+.startGame {
+  margin-bottom: 10px; /* luft over knappen */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centrerer knappen horisontalt */
+}
+
+.startButtonContainer {
+  width: 100%;
+  max-width: 220px; /* matcher bredden på dine bokse */
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.startGameBtn {
+  width: 100%;
+  height: 70px;
+}
+
 /* Sne-lag */
 .containerStylesTeam::before {
   content: ""; /* nødvendigt for at pseudo-elementet vises */

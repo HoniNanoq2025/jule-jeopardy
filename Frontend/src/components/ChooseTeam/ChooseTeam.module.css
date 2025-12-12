@@ -35,6 +35,7 @@
   scrollbar-color: var(--deepCrimson) var(--snowGray);
   max-height: 340px; /* samme som højre side */
   overflow-y: auto; /* scroll hvis der er for mange teams */
+  
 }
 
 .teamItem {
@@ -69,9 +70,9 @@
 }
 
 .selectedCount {
-  font-size: 18px; /* tekststørrelse */
-  color: var(--lightBeige); /* tekstfarve */
-  margin-top: 5px;
+  font-size: 18px;
+  color: var(--lightBeige);
+  height: 24px; /* fast plads */
 }
 
 .chooseTeam button {
