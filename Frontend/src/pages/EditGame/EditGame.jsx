@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
+import Button from "../../components/Button/Button";
 import styles from "./EditGame.module.css";
-import Button from "../../components/Button/Button"
 import {useNavigate} from "react-router-dom";
-import {useState, useEffect} from "react";
 
 export default function EditGame() {
 
@@ -103,8 +103,3 @@ const navigate = useNavigate();
       </div>
     );
   }
-
-
-
-
-

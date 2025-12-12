@@ -1,6 +1,32 @@
-.Footer 
-  {
+.Footer {
   background-color: #D4AF37;
- padding: 20px;
- text-align: center;
+  padding: 20px;
+  text-align: center;
+  position: relative; 
+  overflow: hidden;   
+}
+
+.starContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px white, 0 0 10px white;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1); }
 }
