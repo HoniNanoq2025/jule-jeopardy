@@ -28,6 +28,7 @@
   width: 100%; /* fylder hele bredden */
   padding: 10px; /* indre luft */
   box-sizing: border-box; /* inkluderer padding i width */
+  max-height: 340px;
 
   /* Scrollbar-styling */
   scrollbar-width: thin; /* Firefox */
@@ -65,6 +66,12 @@
 .selected {
   border-color: var(--christmasGreen); /* grøn kant */
   box-shadow: 0 0 10px var(--christmasGreen); /* glow-effekt */
+}
+
+.selectedCount {
+  font-size: 18px;
+  color: var(--lightBeige);
+  height: 24px; /* fast plads */
 }
 
 .chooseTeam button {
