@@ -64,12 +64,15 @@ export default function ChooseGame() {
         onButtonClick={() => handleSubmit("start")}
         disabled={!selectedGame}
         buttonText="Start spil"
+        btnSize={styles.btnSize}
       />
       {/* Knap til at redigere det valgte spil */}
       <Button
         onButtonClick={() => handleSubmit("edit")}
         disabled={!selectedGame}
         buttonText="Rediger spil"
+        btnSize={styles.btnSize}
+
       />
     </div>
   );
