@@ -1,16 +1,18 @@
 import styles from "./CreateNewCategory.module.css";
-import Button from "../../components/Button/Button"
-import { useNavigate } from "react-router-dom";
+import Button from "../../components/Button/Button";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
+const API_URL = "https://jeopardy-gkiyb.ondigitalocean.app";
 
 export default function CreateNewCategory() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [games, setGames] = useState([]);
   const [selectedGame, setSelectedGame] = useState("");
   const [categoryName, setCategoryName] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [questions, setQuestions] = useState([
     { points: 100, question: "", answer: "" },
@@ -20,24 +22,47 @@ export default function CreateNewCategory() {
     { points: 1000, question: "", answer: "" },
   ]);
 
+  
   useEffect(() => {
-    const savedGames = JSON.parse(localStorage.getItem("games") || "[]");
-    setGames(savedGames);
-  }, []);
+    const fetchGames = async () => {
+      try {
+        const res = await fetch(`${API_URL}/games`);
+        const json = await res.json();
 
-  const saveCategory = () => {
-    const newCategory = {
-      game: selectedGame,
-      categoryName,
-      questions,
+        const list = Array.isArray(json.data) ? json.data : [];
+        setGames(list);
+
+        
+        if (location.state?.gameId) {
+          const newId = location.state.gameId;
+          const exists = list.some((g) => g._id === newId);
+          if (exists) setSelectedGame(newId);
+        }
+      } catch (err) {
+        console.error("Kunne ikke hente spil:", err);
+      }
     };
 
-    const saved = JSON.parse(localStorage.getItem("categories") || "[]");
-    saved.push(newCategory);
+    fetchGames();
+  }, []);
 
-    localStorage.setItem("categories", JSON.stringify(saved));
-
+  
+  const navigateGameCreated = () => {
     navigate("/game-created");
+  };
+
+  
+  const goNext = () => {
+    if (!selectedGame) {
+      alert("Vælg et spil først.");
+      return;
+    }
+    if (!categoryName.trim()) {
+      alert("Skriv et kategorinavn.");
+      return;
+    }
+
+    navigateGameCreated();
   };
 
   const updateQuestion = (index, key, value) => {
@@ -49,41 +74,31 @@ export default function CreateNewCategory() {
   return (
     <div className={styles.container}>
       <div className={styles.form}>
-
         <h2>Skab ny kategori</h2>
 
-        <div>
-
-        
-        <select 
+        <select
           className={styles.selectGame}
           value={selectedGame}
           onChange={(e) => setSelectedGame(e.target.value)}
         >
-          <option value="">vælg spil</option>
-          {games.map((game, index) => (
-            <option key={index} value={game}>{game}</option>
+          <option value="">Vælg spil</option>
+
+          {games.map((game) => (
+            <option key={game._id} value={game._id}>
+              {game.name}
+            </option>
           ))}
         </select>
-        
-        
-        
-        </div>
-
-
 
         <div className={styles.inputCategory}>
-        
+          <input
+            type="text"
+            placeholder="Kategorinavn..."
+            value={categoryName}
+            onChange={(e) => setCategoryName(e.target.value)}
+          />
+        </div>
 
-        
-        <input 
-          type="text"
-          placeholder="Kategorinavn...."
-          value={categoryName}
-          onChange={(e) => setCategoryName(e.target.value)}
-        /></div>
-
-        
         {questions.map((q, index) => (
           <div key={index} className={styles.formNext}>
             {q.points}
@@ -95,12 +110,17 @@ export default function CreateNewCategory() {
             <input
               placeholder="spørgsmål..."
               value={q.question}
-              onChange={(e) => updateQuestion(index, "question", e.target.value)}
+              onChange={(e) =>
+                updateQuestion(index, "question", e.target.value)
+              }
             />
           </div>
         ))}
 
-        <Button buttonText="Tilføj" onButtonClick={saveCategory} />
+        <Button
+          buttonText="Tilføj"
+          onButtonClick={goNext}
+        />
       </div>
     </div>
   );
