@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
-  min-height: 84.4vh;
+  min-height: calc(100vh - 128px);
 }
 
 .Homediv {
