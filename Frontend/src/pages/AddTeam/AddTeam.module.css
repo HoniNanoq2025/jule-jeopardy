@@ -16,7 +16,7 @@
 .componentsContainer {
   display: flex;
   flex-direction: row;
-  gap: 160px; /* styrer afstanden mellem venstre og højre */
+  gap: 100px; /* styrer afstanden mellem venstre og højre */
   justify-content: center;
   align-items: center;
 }
