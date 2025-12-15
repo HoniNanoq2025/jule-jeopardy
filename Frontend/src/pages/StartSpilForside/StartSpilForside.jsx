@@ -18,7 +18,7 @@ export default function StartSpilForside() {
       <div className={styles.Homediv}>
         <div>
           <Button
-            buttonText="skab nyt spil"
+            buttonText="Skab nyt spil"
             onButtonClick={navigateToNewgame}
             btnSize={styles.startGameBtn}
           />
@@ -26,7 +26,7 @@ export default function StartSpilForside() {
 
         <div>
           <Button
-            buttonText="vælg eksisterende spil"
+            buttonText="Vælg eksisterende spil"
             onButtonClick={navigateToSaved}
             btnSize={styles.chooseGameBtn}
           />
