@@ -6,8 +6,7 @@
   position: relative; /* vigtigt for sne-overlay */
   overflow: hidden;
   min-height: calc(100vh - 130px);
-  width: 100vw;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +16,7 @@
 .componentsContainer {
   display: flex;
   flex-direction: row;
-  gap: 160px; /* styrer afstanden mellem venstre og højre */
+  gap: 100px; /* styrer afstanden mellem venstre og højre */
   justify-content: center;
   align-items: center;
 }
@@ -27,6 +26,26 @@
   flex: 1;
   max-width: 420px;
   z-index: 1;
+}
+
+.startGame {
+  margin-bottom: 10px; /* luft over knappen */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centrerer knappen horisontalt */
+}
+
+.startButtonContainer {
+  width: 100%;
+  max-width: 220px; /* matcher bredden på dine bokse */
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.startGameBtn {
+  width: 100%;
+  height: 70px;
 }
 
 /* Sne-lag */

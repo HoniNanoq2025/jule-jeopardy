@@ -3,6 +3,7 @@
   display: flex; /* flex layout */
   flex-direction: column; /* elementer stables lodret */
   align-items: center; /* centrerer indholdet horisontalt */
+  width: 400px;
   gap: 18px; /* afstand mellem elementer */
   box-sizing: border-box; /* inkluderer padding i width */
 }
@@ -69,12 +70,24 @@
 }
 
 .selectedCount {
-  font-size: 18px; /* tekststørrelse */
-  color: var(--lightBeige); /* tekstfarve */
-  margin-top: 5px;
+  font-size: 18px;
+  color: var(--lightBeige);
+  height: 24px; /* fast plads */
 }
 
-.chooseTeam button {
-  width: 100%; /* knappen fylder hele bredden */
-  padding: 12px; /* indre luft */
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.chooseBtn{
+  width: 180px;
+  margin: 0;
+}
+
+.deleteBtn{
+  width: 180px;
+  margin: 0;
 }
