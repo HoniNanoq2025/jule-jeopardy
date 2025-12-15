@@ -20,4 +20,7 @@
   height: 75px;
   margin-bottom: 12px;
   text-align: center;
+  max-width: 160px;
+  padding: 10px;
+  text-wrap: wrap;
 }
