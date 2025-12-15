@@ -1,10 +1,46 @@
 import styles from "./GameCreated.module.css";
 import Button from "../../components/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { fetchGameById } from "../../hooks/fetch";
 
 export default function GameCreated() {
   const navigate = useNavigate();
   const { gameId } = useParams();
+  const [categoryCount, setCategoryCount] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadCategoryCount = async () => {
+      try {
+        setLoading(true);
+
+        // Hent kategorier fra backend
+        const data = await fetchGameById(gameId);
+        const gameData = data.data || data;
+        const backendCategories = Array.isArray(gameData.categories)
+          ? gameData.categories
+          : [];
+
+        // Hent lokale kategorier fra localStorage
+        const localKey = `customCategories-${gameId}`;
+        const localCategories =
+          JSON.parse(localStorage.getItem(localKey)) || [];
+
+        // Beregn total antal kategorier
+        const totalCount = backendCategories.length + localCategories.length;
+        setCategoryCount(totalCount);
+      } catch (err) {
+        console.error("Kunne ikke hente kategorier:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (gameId) {
+      loadCategoryCount();
+    }
+  }, [gameId]);
 
   const navigateAddTeam = () => {
     navigate(`/add-team/${gameId}`);
@@ -19,7 +55,14 @@ export default function GameCreated() {
   return (
     <div className={styles.nameGame}>
       <div className={styles.gamediv}>
-        <p>Du har nu skabt et spil med 6 kategorier</p>
+        {loading ? (
+          <p>Henter kategorier...</p>
+        ) : (
+          <p>
+            Du har nu skabt et spil med {categoryCount}{" "}
+            {categoryCount === 1 ? "kategori" : "kategorier"}
+          </p>
+        )}
 
         <div>
           <Button
@@ -40,30 +83,3 @@ export default function GameCreated() {
     </div>
   );
 }
-
-const loadGame = async () => {
-  try {
-    setLoading(true);
-    setError(null);
-
-    const data = await fetchGameById(gameId);
-    const gameData = data.data || data;
-
-    setGame(gameData);
-    setTeams(gameData.teams || []);
-
-    const backendCategories = Array.isArray(gameData.categories)
-      ? gameData.categories
-      : [];
-
-    const localKey = `customCategories-${gameId}`;
-    const localCategories = JSON.parse(localStorage.getItem(localKey)) || [];
-
-    setCategories([...backendCategories, ...localCategories]);
-  } catch (err) {
-    console.error("Error when fetching game:", err);
-    setError("Kunne ikke hente spillet");
-  } finally {
-    setLoading(false);
-  }
-};
