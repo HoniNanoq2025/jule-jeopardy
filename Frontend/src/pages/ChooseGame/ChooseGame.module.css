@@ -1,6 +1,6 @@
 .choosegamePage {
   width: 100%;
-  min-height: calc(100vh - 130px);
+  min-height: calc(100vh - 128px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,10 +61,10 @@
 .choosegamePage::before {
   content: "";
   position: absolute;
-  top: 10%; /* start snow around 30% down the page */
+  top: 7%; /* start snow around 30% down the page */
   left: 0;
   width: 100%;
-  height: 78%; /* snow only covers middle 40% */
+  min-height: 90%; /* snow only covers middle 40% */
   pointer-events: none;
   z-index: 0;
 
@@ -78,7 +78,7 @@
   background-size: 60px 60px, 100px 100px, 150px 150px;
   background-repeat: repeat;
 
-  animation: snowFall 10s linear infinite;
+  animation: snowFall 30s linear infinite;
 }
 
 @keyframes snowFall {

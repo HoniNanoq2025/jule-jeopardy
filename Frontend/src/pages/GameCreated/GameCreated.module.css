@@ -11,13 +11,19 @@
   padding: 10rem;
 }
 
-.gamediv p{
+.gamediv p {
   font-size: 24px;
   font-weight: bold;
 }
 
 .gamediv div {
   padding: 20px;
+}
+
+.startGameBtn,
+.createCategoryBtn {
+  margin: 0;
+  width: 290px;
 }
 
 @media screen and (max-width: 650px) {
