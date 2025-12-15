@@ -29,6 +29,7 @@ export default function App() {
           <Route path="/jeopardy" element={<Jeopardy />} />{/* To be removed when page works */}
           <Route path="/jeopardy/:gameId" element={<Jeopardy />} />
           <Route path="/edit-game" element={<EditGame />} />
+          <Route path="/game-created/:gameId" element={<GameCreated />} />
         </Routes>
       </main>
 

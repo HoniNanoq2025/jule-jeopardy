@@ -15,11 +15,11 @@ export default function CreateNewCategory() {
   const [loading, setLoading] = useState(false);
 
   const [questions, setQuestions] = useState([
-    { points: 100, question: "", answer: "" },
-    { points: 200, question: "", answer: "" },
-    { points: 400, question: "", answer: "" },
-    { points: 800, question: "", answer: "" },
-    { points: 1000, question: "", answer: "" },
+    { value: 100, question: "", answer: "" },
+    { value: 200, question: "", answer: "" },
+    { value: 300, question: "", answer: "" },
+    { value: 400, question: "", answer: "" },
+    { value: 500, question: "", answer: "" },
   ]);
 
   
@@ -28,15 +28,15 @@ export default function CreateNewCategory() {
       try {
         const res = await fetch(`${API_URL}/games`);
         const json = await res.json();
-
         const list = Array.isArray(json.data) ? json.data : [];
+
         setGames(list);
 
-        
         if (location.state?.gameId) {
-          const newId = location.state.gameId;
-          const exists = list.some((g) => g._id === newId);
-          if (exists) setSelectedGame(newId);
+          const id = location.state.gameId;
+          if (list.some((g) => g._id === id)) {
+            setSelectedGame(id);
+          }
         }
       } catch (err) {
         console.error("Kunne ikke hente spil:", err);
@@ -44,33 +44,51 @@ export default function CreateNewCategory() {
     };
 
     fetchGames();
-  }, []);
+  }, [location.state]);
 
   
-  const navigateGameCreated = () => {
-    navigate("/game-created");
+  const saveLocalCategory = () => {
+    const key = `customCategories-${selectedGame}`;
+    const existing = JSON.parse(localStorage.getItem(key)) || [];
+
+    const newCategory = {
+      _id: `local-category-${Date.now()}`,
+      name: categoryTitle,
+      questions: questions.map((q, index) => ({
+        _id: `local-question-${Date.now()}-${index}`,
+        value: q.value,
+        question: q.question,
+        answer: q.answer,
+        answered: false,
+      })),
+    };
+
+    localStorage.setItem(key, JSON.stringify([...existing, newCategory]));
   };
 
   
-  const goNext = () => {
+  const updateQuestion = (index, field, value) => {
+    const updated = [...questions];
+    updated[index][field] = value;
+    setQuestions(updated);
+  };
+
+  const handleSubmit = () => {
     if (!selectedGame) {
       alert("Vælg et spil først.");
       return;
     }
-    if (!categoryName.trim()) {
+
+    if (!categoryTitle.trim()) {
       alert("Skriv et kategorinavn.");
       return;
     }
 
-    navigateGameCreated();
+    saveLocalCategory();
+    navigate(`/game-created/${selectedGame}`);
   };
 
-  const updateQuestion = (index, key, value) => {
-    const updated = [...questions];
-    updated[index][key] = value;
-    setQuestions(updated);
-  };
-
+  
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -101,12 +119,16 @@ export default function CreateNewCategory() {
 
         {questions.map((q, index) => (
           <div key={index} className={styles.formNext}>
-            {q.points}
+            <strong>{q.value}</strong>
+
             <input
-              placeholder="svar..."
-              value={q.answer}
-              onChange={(e) => updateQuestion(index, "answer", e.target.value)}
+              placeholder="Spørgsmål..."
+              value={q.question}
+              onChange={(e) =>
+                updateQuestion(index, "question", e.target.value)
+              }
             />
+
             <input
               placeholder="spørgsmål..."
               value={q.question}
