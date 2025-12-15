@@ -23,12 +23,15 @@ export default function App() {
           <Route path="/create-game" element={<NameGame />} />
           <Route path="/create-category" element={<CreateNewCategory />} />
           <Route path="/game-created" element={<GameCreated />} />
-          <Route path="/add-team" element={<AddTeam />} />{/* To be removed when page works */}
+          <Route path="/add-team" element={<AddTeam />} />
+          {/* To be removed when page works */}
           <Route path="/add-team/:gameId" element={<AddTeam />} />
           <Route path="/choose-game" element={<ChooseGame />} />
-          <Route path="/jeopardy" element={<Jeopardy />} />{/* To be removed when page works */}
+          <Route path="/jeopardy" element={<Jeopardy />} />
+          {/* To be removed when page works */}
           <Route path="/jeopardy/:gameId" element={<Jeopardy />} />
           <Route path="/edit-game" element={<EditGame />} />
+          <Route path="/edit-game/:gameId" element={<EditGame />} />
           <Route path="/game-created/:gameId" element={<GameCreated />} />
         </Routes>
       </main>
