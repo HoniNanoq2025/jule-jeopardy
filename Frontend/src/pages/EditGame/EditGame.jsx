@@ -48,7 +48,7 @@ const navigate = useNavigate();
       <div className={styles.container}>
         <div className={styles.form}>
   
-          <h2>ændere dine kalgoriere</h2>
+          <h2>Opdatér dine kategorier</h2>
   
           <div>
   
@@ -58,7 +58,7 @@ const navigate = useNavigate();
             value={selectedGame}
             onChange={(e) => setSelectedGame(e.target.value)}
           >
-            <option value="">vælg kalgoriere</option>
+            <option value="">vælg kategori</option>
             {games.map((game, index) => (
               <option key={index} value={game}>{game}</option>
             ))}
@@ -76,7 +76,7 @@ const navigate = useNavigate();
           
           <input 
             type="text"
-            placeholder=" ændere Kategorinavn...."
+            placeholder=" Opdatér Kategorinavn...."
             value={categoryName}
             onChange={(e) => setCategoryName(e.target.value)}
           /></div>
@@ -86,19 +86,19 @@ const navigate = useNavigate();
             <div key={index} className={styles.formNext}>
               {q.points}
               <input
-                placeholder="ændere svar..."
+                placeholder="Opdatér svar..."
                 value={q.answer}
                 onChange={(e) => updateQuestion(index, "answer", e.target.value)}
               />
               <input
-                placeholder="ændere spørgsmål..."
+                placeholder="Opdatér spørgsmål..."
                 value={q.question}
                 onChange={(e) => updateQuestion(index, "question", e.target.value)}
               />
             </div>
           ))}
   
-          <Button buttonText="update" onButtonClick={saveCategory} />
+          <Button buttonText="Opdatér" onButtonClick={saveCategory} />
         </div>
       </div>
     );
