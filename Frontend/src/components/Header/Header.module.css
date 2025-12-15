@@ -1,8 +1,8 @@
 .Header {
-  background-color: #D4AF37;
+  background-color: #d4af37;
   padding: 20px;
-  position: relative; 
-  overflow: hidden;     
+  position: relative;
+  overflow: hidden;
 }
 
 .Header a:hover {
@@ -13,42 +13,33 @@
   color: darkred;
 }
 
-
-
-.Header::after {
-  content: "";
+.starContainer {
   position: absolute;
-  top: -15px;            
+  top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  height: 100%;
   pointer-events: none;
-  z-index: 2;
-
-  background:
-    radial-gradient(circle, #ff0000 6px, transparent 7px) 5% 60%,
-    radial-gradient(circle, #00ff00 6px, transparent 7px) 20% 40%,
-    radial-gradient(circle, #0000ff 6px, transparent 7px) 35% 55%,
-    radial-gradient(circle, #ffff00 6px, transparent 7px) 50% 45%,
-    radial-gradient(circle, #ff00ff 6px, transparent 7px) 65% 60%,
-    radial-gradient(circle, #00ffff 6px, transparent 7px) 80% 40%,
-    radial-gradient(circle, #ff6600 6px, transparent 7px) 95% 55%;
-  
-  background-size: 20px 20px;
-  background-repeat: no-repeat;
-
-  border-bottom: 3px solid #222;
-  border-radius: 50% / 30%;
-  
-  animation: glowlights 1.2s infinite alternate ease-in-out;
+  z-index: 0;
 }
 
-@keyframes glowlights {
-  0% {
-    filter: brightness(0.7);
-  }
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 6px white, 0 0 10px white;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
   100% {
-    filter: brightness(1.7);
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
-
