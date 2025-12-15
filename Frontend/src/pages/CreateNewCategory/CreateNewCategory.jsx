@@ -11,7 +11,9 @@ export default function CreateNewCategory() {
 
   const [games, setGames] = useState([]);
   const [selectedGame, setSelectedGame] = useState("");
-  const [categoryTitle, setCategoryTitle] = useState("");
+  const [categoryName, setCategoryName] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const [questions, setQuestions] = useState([
     { value: 100, question: "", answer: "" },
     { value: 200, question: "", answer: "" },
@@ -98,6 +100,7 @@ export default function CreateNewCategory() {
           onChange={(e) => setSelectedGame(e.target.value)}
         >
           <option value="">Vælg spil</option>
+
           {games.map((game) => (
             <option key={game._id} value={game._id}>
               {game.name}
@@ -109,8 +112,8 @@ export default function CreateNewCategory() {
           <input
             type="text"
             placeholder="Kategorinavn..."
-            value={categoryTitle}
-            onChange={(e) => setCategoryTitle(e.target.value)}
+            value={categoryName}
+            onChange={(e) => setCategoryName(e.target.value)}
           />
         </div>
 
@@ -127,16 +130,19 @@ export default function CreateNewCategory() {
             />
 
             <input
-              placeholder="Svar..."
-              value={q.answer}
+              placeholder="spørgsmål..."
+              value={q.question}
               onChange={(e) =>
-                updateQuestion(index, "answer", e.target.value)
+                updateQuestion(index, "question", e.target.value)
               }
             />
           </div>
         ))}
 
-        <Button buttonText="Tilføj kategori" onButtonClick={handleSubmit} />
+        <Button
+          buttonText="Tilføj"
+          onButtonClick={goNext}
+        />
       </div>
     </div>
   );
