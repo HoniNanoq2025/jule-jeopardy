@@ -20,6 +20,7 @@ export default function StartSpilForside() {
           <Button
             buttonText="skab nyt spil"
             onButtonClick={navigateToNewgame}
+            btnSize={styles.startGameBtn}
           />
         </div>
 
