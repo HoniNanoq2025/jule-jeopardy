@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function EditGame() {
   const navigate = useNavigate();
-  const [games, setGames] = useState([]);
-  const [selectedGame, setSelectedGame] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [categoryName, setCategoryName] = useState("");
 
   const [questions, setQuestions] = useState([
@@ -18,23 +18,48 @@ export default function EditGame() {
   ]);
 
   useEffect(() => {
-    const savedGames = JSON.parse(localStorage.getItem("games") || "[]");
-    setGames(savedGames);
+    fetch('/api/categories')
+      .then(response => response.json())
+      .then(data => setCategories(data))
+      .catch(error => console.error('Error fetching categories:', error));
   }, []);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      const category = categories.find(cat => cat.id === selectedCategory);
+      if (category) {
+        setCategoryName(category.categoryName);
+        setQuestions(category.questions);
+      }
+    } else {
+      setCategoryName("");
+      setQuestions([
+        { points: 100, question: "", answer: "" },
+        { points: 200, question: "", answer: "" },
+        { points: 400, question: "", answer: "" },
+        { points: 800, question: "", answer: "" },
+        { points: 1000, question: "", answer: "" },
+      ]);
+    }
+  }, [selectedCategory, categories]);
 
   const saveCategory = () => {
     const editCategory = {
-      game: selectedGame,
+      id: selectedCategory,
       categoryName,
       questions,
     };
 
-    const saved = JSON.parse(localStorage.getItem("categories") || "[]");
-    saved.push(editCategory);
-
-    localStorage.setItem("categories", JSON.stringify(saved));
-
-    navigate("/game-created");
+    fetch('/api/categories', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(editCategory),
+    })
+      .then(response => response.json())
+      .then(() => navigate("/game-created"))
+      .catch(error => console.error('Error saving category:', error));
   };
 
   const updateQuestion = (index, key, value) => {
@@ -51,13 +76,13 @@ export default function EditGame() {
         <div>
           <select
             className={styles.selectGame}
-            value={selectedGame}
-            onChange={(e) => setSelectedGame(e.target.value)}
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
           >
             <option value="">vælg kategori</option>
-            {games.map((game, index) => (
-              <option key={index} value={game}>
-                {game}
+            {categories.map((category, index) => (
+              <option key={index} value={category.id}>
+                {category.categoryName}
               </option>
             ))}
           </select>
