@@ -19,25 +19,39 @@ export default function Jeopardy() {
   const [error, setError] = useState(null);
 
   const loadGame = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+  try {
+    setLoading(true);
+    setError(null);
 
-      console.log("Loading game with ID:", gameId);
-      const data = await fetchGameById(gameId);
-      console.log("Game data retrieved:", data);
+    
+    const data = await fetchGameById(gameId);
+    const gameData = data.data || data;
 
-      const gameData = data.data || data;
-      setGame(gameData);
-      setCategories(gameData.categories || []);
-      setTeams(gameData.teams || []);
-    } catch (err) {
-      console.error("Error when fetching game:", err);
-      setError("Kunne ikke hente spillet");
-    } finally {
-      setLoading(false);
-    }
-  };
+    
+    setGame(gameData);
+    setTeams(gameData.teams || []);
+
+    
+    const backendCategories = Array.isArray(gameData.categories)
+      ? gameData.categories
+      : [];
+
+  
+    const localKey = `customCategories-${gameId}`;
+    const localCategories = JSON.parse(
+      localStorage.getItem(localKey)
+    ) || [];
+
+    
+    setCategories([...backendCategories, ...localCategories]);
+  } catch (err) {
+    console.error("Error when fetching game:", err);
+    setError("Kunne ikke hente spillet");
+  } finally {
+    setLoading(false);
+  }
+};
+  
 
   useEffect(() => {
     if (gameId) {
