@@ -28,6 +28,7 @@ export default function StartSpilForside() {
           <Button
             buttonText="vælg eksisterende spil"
             onButtonClick={navigateToSaved}
+            btnSize={styles.chooseGameBtn}
           />
         </div>
       </div>
