@@ -23,7 +23,7 @@
             "value": 400
           },
           {
-            "question": "Denne danske tradition indebærer at danse rundt om et træ pyntet med lys og kugler juleaften.",
+            "question": "Dansk tradition, hvor man danser om et træ pyntet med lys og kugler juleaften.",
             "answer": "Hvad er at danse om juletræet?",
             "value": 800
           },
@@ -99,7 +99,7 @@
         "questions": [
           {
             "question": "Det siges, at julemanden bor på Nordpolen.",
-            "answer": "Sand",
+            "answer": "Falsk, han bor i Grønland",
             "value": 100
           },
           {
@@ -108,12 +108,12 @@
             "value": 200
           },
           {
-            "question": "Det er en gammel dansk myte, at juletræet altid har været en del af julen i Danmark.",
+            "question": "Juletræet har altid været en del af julen i Danmark.",
             "answer": "Falsk",
             "value": 400
           },
           {
-            "question": "Man siger, at Rudolf altid har været en del af julemandens oprindelige rensdyrflok.",
+            "question": "Rudolf har altid været en del af julemandens oprindelige rensdyrflok.",
             "answer": "Falsk",
             "value": 800
           },
