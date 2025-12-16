@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../components/Button/Button";
 import styles from "./EditGame.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 
 export default function EditGame() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [categoryName, setCategoryName] = useState("");
+ const { gameId } = useParams();
+
+ const data = await fetchGameById(gameId);
 
   const [questions, setQuestions] = useState([
     { points: 100, question: "", answer: "" },
