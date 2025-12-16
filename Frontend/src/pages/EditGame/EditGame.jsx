@@ -81,7 +81,7 @@ export default function EditGame() {
           >
             <option value="">vælg kategori</option>
             {categories.map((category, index) => (
-              <option key={index} value={category.id}>
+              <option key={index} value={category._id}>
                 {category.categoryName}
               </option>
             ))}
