@@ -1,0 +1,563 @@
+[
+  {
+    "name": "Julens Jeopardy",
+    "isOver": false,
+    "teams": [],
+    "categories": [
+      {
+        "name": "Juleunderholdning",
+        "questions": [
+          {
+            "question": "Denne drik forbinder man ofte med jul, og den laves af mælk, fløde, sukker og æg.",
+            "answer": "Hvad er æggesnaps (Eggnog)?",
+            "value": 100
+          },
+          {
+            "question": "I filmen 'Alene Hjemme' rejser familien McCallister hertil på juleferie.",
+            "answer": "Hvad er Paris?",
+            "value": 200
+          },
+          {
+            "question": "Denne kendte julesang starter med ordene 'Glade jul, dejlige jul'.",
+            "answer": "Hvad er 'Glade jul' (Stille Nacht / Silent Night)?",
+            "value": 400
+          },
+          {
+            "question": "Dansk tradition, hvor man danser om et træ pyntet med lys og kugler juleaften.",
+            "answer": "Hvad er at danse om juletræet?",
+            "value": 800
+          },
+          {
+            "question": "Denne julekalender på DR introducerede nissen Pyrus i 1994.",
+            "answer": "Hvad er 'Alletiders Jul'?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemanden",
+        "questions": [
+          {
+            "question": "Dette rensdyr er kendt for sin røde næse og hjælper julemanden med at trække slæden.",
+            "answer": "Hvem er Rudolf?",
+            "value": 100
+          },
+          {
+            "question": "Dette transportmiddel bruger julemanden til at levere gaver verden rundt.",
+            "answer": "Hvad er en slæde?",
+            "value": 200
+          },
+          {
+            "question": "Disse små hjælpere arbejder i julemandens værksted og laver legetøj til børn.",
+            "answer": "Hvem er nisser?",
+            "value": 400
+          },
+          {
+            "question": "I sangen 'Santa Claus Is Coming to Town' gør julemanden dette for at finde ud af, om børn er artige.",
+            "answer": "Hvad er at lave en liste og tjekke den to gange?",
+            "value": 800
+          },
+          {
+            "question": "Dette digt fra 1823 introducerede navnene på julemandens otte oprindelige rensdyr.",
+            "answer": "Hvad er 'A Visit from St. Nicholas' (The Night Before Christmas)?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Juletraditioner",
+        "questions": [
+          {
+            "question": "I dette land hænger man julestrømper ved pejsen, så julemanden kan fylde dem med gaver.",
+            "answer": "Hvad er USA?",
+            "value": 100
+          },
+          {
+            "question": "I dette land danser man ofte rundt om juletræet juleaften, en tradition der er meget udbredt.",
+            "answer": "Hvad er Danmark?",
+            "value": 200
+          },
+          {
+            "question": "I dette land fejrer man 'Las Posadas', hvor man genopfører Marias og Josefs rejse til Betlehem.",
+            "answer": "Hvad er Mexico?",
+            "value": 400
+          },
+          {
+            "question": "I dette land spiser man ofte 'Panettone', en sød julebrødskage fyldt med tørret frugt.",
+            "answer": "Hvad er Italien?",
+            "value": 800
+          },
+          {
+            "question": "I dette land fejrer man 'Julotta', en tidlig julegudstjeneste ved solopgang den 25. december.",
+            "answer": "Hvad er Sverige?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemyter",
+        "questions": [
+          {
+            "question": "Det siges, at julemanden bor på Nordpolen.",
+            "answer": "Falsk, han bor i Grønland",
+            "value": 100
+          },
+          {
+            "question": "Pebernødder blev oprindeligt brugt som små gaver til børn, der havde været artige.",
+            "answer": "Sand",
+            "value": 200
+          },
+          {
+            "question": "Juletræet har altid været en del af julen i Danmark.",
+            "answer": "Falsk",
+            "value": 400
+          },
+          {
+            "question": "Rudolf har altid været en del af julemandens oprindelige rensdyrflok.",
+            "answer": "Falsk",
+            "value": 800
+          },
+          {
+            "question": "En populær myte fortæller, at misteltenen bringer held og kærlighed, hvis man kysser under den.",
+            "answer": "Sand",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julebordet",
+        "questions": [
+          {
+            "question": "Denne klassiske ret består af flæskesvær og serveres ofte som hovedret juleaften.",
+            "answer": "Hvad er flæskesteg?",
+            "value": 100
+          },
+          {
+            "question": "Denne dessert med ris, fløde og kirsebærsovs indeholder en hel mandel som tradition.",
+            "answer": "Hvad er risalamande?",
+            "value": 200
+          },
+          {
+            "question": "Denne ret består af små stegte frikadeller, som ofte er en del af julefrokosten.",
+            "answer": "Hvad er frikadeller?",
+            "value": 400
+          },
+          {
+            "question": "Denne fisk serveres ofte marineret i forskellige varianter som karry, løg eller dild til julefrokosten.",
+            "answer": "Hvad er sild?",
+            "value": 800
+          },
+          {
+            "question": "Denne stærke drik, som ofte nydes til julefrokosten sammen med sild, er en dansk tradition.",
+            "answer": "Hvad er snaps?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Gæt en julesang",
+        "questions": [
+          {
+            "question": "Glade jul",
+            "answer": "Hvad er 'Glade jul, dejlige jul'?",
+            "value": 100
+          },
+          {
+            "question": "Bjældeklang",
+            "answer": "Hvad er 'Bjældeklang' (Jingle Bells)?",
+            "value": 200
+          },
+          {
+            "question": "På loftet",
+            "answer": "Hvad er 'På loftet sidder nissen'?",
+            "value": 400
+          },
+          {
+            "question": "Højt fra træets",
+            "answer": "Hvad er 'Højt fra træets grønne top'?",
+            "value": 800
+          },
+          {
+            "question": "Last Christmas",
+            "answer": "Hvad er 'Last Christmas' af Wham?",
+            "value": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juleduellen",
+    "isOver": false,
+    "teams": [],
+    "categories": [
+      {
+        "name": "Juledekorationer",
+        "questions": [
+          {
+            "question": "Denne pynt flettes af papir og hænges på juletræet.",
+            "answer": "Hvad er julehjerter?",
+            "value": 100
+          },
+          {
+            "question": "Denne pynt placeres øverst på juletræet som afslutning.",
+            "answer": "Hvad er en stjerne?",
+            "value": 200
+          },
+          {
+            "question": "Denne figur af gran og pynt hænges på døren som velkomst.",
+            "answer": "Hvad er en julekrans?",
+            "value": 400
+          },
+          {
+            "question": "Denne tradition indebærer at tænde fire lys i december.",
+            "answer": "Hvad er adventskransen?",
+            "value": 800
+          },
+          {
+            "question": "Denne danske tradition indebærer små papirnisser, der kravler rundt i hjemmet.",
+            "answer": "Hvad er kravlenisser?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemarkeder",
+        "questions": [
+          {
+            "question": "Denne danske by er kendt for sit julemarked i Tivoli.",
+            "answer": "Hvad er København?",
+            "value": 100
+          },
+          {
+            "question": "Denne tyske by er berømt for sit Christkindlesmarkt.",
+            "answer": "Hvad er Nürnberg?",
+            "value": 200
+          },
+          {
+            "question": "Denne franske by i Alsace er kendt som 'julemarkedets hovedstad'.",
+            "answer": "Hvad er Strasbourg?",
+            "value": 400
+          },
+          {
+            "question": "Denne by i Tjekkiet har et julemarked på den gamle rådhusplads.",
+            "answer": "Hvad er Prag?",
+            "value": 800
+          },
+          {
+            "question": "Denne østrigske by holder julemarked ved Schönbrunn Slot.",
+            "answer": "Hvad er Wien?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julefigurer",
+        "questions": [
+          {
+            "question": "Denne figur er kendt for at bringe gaver juleaften i Danmark.",
+            "answer": "Hvem er julemanden?",
+            "value": 100
+          },
+          {
+            "question": "Denne figur er lavet af sne og har ofte gulerodsnæse.",
+            "answer": "Hvad er en snemand?",
+            "value": 200
+          },
+          {
+            "question": "Denne figur er kendt i Catalonien som en juletræstamme, der 'giver gaver'.",
+            "answer": "Hvad er Tió de Nadal?",
+            "value": 400
+          },
+          {
+            "question": "Denne figur er kendt i Island, hvor 13 forskellige nisser besøger børn.",
+            "answer": "Hvem er Yule Lads?",
+            "value": 800
+          },
+          {
+            "question": "Denne figur er kendt fra Dickens’ fortælling og får besøg af tre ånder.",
+            "answer": "Hvem er Ebenezer Scrooge?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemad verden rundt",
+        "questions": [
+          {
+            "question": "I England spiser man denne frugtkage til jul.",
+            "answer": "Hvad er Christmas pudding?",
+            "value": 100
+          },
+          {
+            "question": "I Tyskland spiser man denne kage med tørret frugt og flormelis.",
+            "answer": "Hvad er Stollen?",
+            "value": 200
+          },
+          {
+            "question": "I Polen spiser man denne suppe med rødbeder juleaften.",
+            "answer": "Hvad er barszcz?",
+            "value": 400
+          },
+          {
+            "question": "I Italien spiser man denne søde brødskage til jul.",
+            "answer": "Hvad er Panettone?",
+            "value": 800
+          },
+          {
+            "question": "I Norge spiser man ofte denne tørrede fisk til jul.",
+            "answer": "Hvad er lutefisk?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemusikklassikere",
+        "questions": [
+          {
+            "question": "Denne sang starter med ordene 'We wish you a Merry Christmas'.",
+            "answer": "Hvad er 'We Wish You a Merry Christmas'?",
+            "value": 100
+          },
+          {
+            "question": "Denne sang blev gjort berømt af Bing Crosby og handler om snefyldte juledage.",
+            "answer": "Hvad er 'White Christmas'?",
+            "value": 200
+          },
+          {
+            "question": "Denne sang starter med 'O Come, All Ye Faithful'.",
+            "answer": "Hvad er 'Adeste Fideles'?",
+            "value": 400
+          },
+          {
+            "question": "Denne sang blev udgivet af Wham! i 1984.",
+            "answer": "Hvad er 'Last Christmas'?",
+            "value": 800
+          },
+          {
+            "question": "Denne sang starter med ordene 'Hark! The Herald Angels Sing'.",
+            "answer": "Hvad er 'Hark! The Herald Angels Sing'?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julehistorier og eventyr",
+        "questions": [
+          {
+            "question": "Denne fortælling af H.C. Andersen handler om et grantræ, der drømmer om at vokse sig stor.",
+            "answer": "Hvad er 'Grantræet'?",
+            "value": 100
+          },
+          {
+            "question": "Denne fortælling handler om en snemand, der kommer til live med en hat.",
+            "answer": "Hvad er 'Frosty the Snowman'?",
+            "value": 200
+          },
+          {
+            "question": "Denne fortælling af Dickens handler om Scrooge og tre juleånder.",
+            "answer": "Hvad er 'A Christmas Carol'?",
+            "value": 400
+          },
+          {
+            "question": "Denne fortælling handler om en nøddeknækker, der bliver til en prins.",
+            "answer": "Hvad er 'Nøddeknækkeren'?",
+            "value": 800
+          },
+          {
+            "question": "Denne fortælling af H.C. Andersen handler om en lille pige med tændstikker juleaften.",
+            "answer": "Hvad er 'Den lille pige med svovlstikkerne'?",
+            "value": 1000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Julefesten",
+    "isOver": false,
+    "teams": [],
+    "categories": [
+      {
+        "name": "Julekalendere på TV",
+        "questions": [
+          {
+            "question": "Denne DR‑julekalender fra 1995 hedder 'Alletiders Nisse'.",
+            "answer": "Hvad er 'Alletiders Nisse'?",
+            "value": 100
+          },
+          {
+            "question": "Denne TV 2‑julekalender fra 1994 introducerede 'The Julekalender'.",
+            "answer": "Hvad er 'The Julekalender'?",
+            "value": 200
+          },
+          {
+            "question": "Denne DR‑julekalender fra 2002 handlede om en dreng ved navn Buster.",
+            "answer": "Hvad er 'Busters Jul'?",
+            "value": 400
+          },
+          {
+            "question": "Denne DR‑julekalender fra 2012 handlede om en magisk stjerne.",
+            "answer": "Hvad er 'Julestjerner'?",
+            "value": 800
+          },
+          {
+            "question": "Denne DR‑julekalender fra 1986 hed 'Nissebanden'.",
+            "answer": "Hvad er 'Nissebanden'?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Danske julesange",
+        "questions": [
+          {
+            "question": "Denne sang starter med ordene 'Højt fra træets grønne top'.",
+            "answer": "Hvad er 'Højt fra træets grønne top'?",
+            "value": 100
+          },
+          {
+            "question": "Denne sang starter med ordene 'På loftet sidder nissen'.",
+            "answer": "Hvad er 'På loftet sidder nissen'?",
+            "value": 200
+          },
+          {
+            "question": "Denne sang starter med ordene 'Et barn er født i Betlehem'.",
+            "answer": "Hvad er 'Et barn er født i Betlehem'?",
+            "value": 400
+          },
+          {
+            "question": "Denne sang starter med ordene 'Nu er det jul igen'.",
+            "answer": "Hvad er 'Nu er det jul igen'?",
+            "value": 800
+          },
+          {
+            "question": "Denne sang starter med ordene 'Dejlig er jorden'.",
+            "answer": "Hvad er 'Dejlig er jorden'?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julemad i Danmark",
+        "questions": [
+          {
+            "question": "Denne ret består af andesteg med æbler og svesker.",
+            "answer": "Hvad er juleand?",
+            "value": 100
+          },
+          {
+            "question": "Denne dessert spises juleaften og indeholder en mandelgave.",
+            "answer": "Hvad er risalamande?",
+            "value": 200
+          },
+          {
+            "question": "Denne småkage er rund, sprød og smager af vanilje – en klassiker til jul.",
+            "answer": "Hvad er vaniljekranse?",
+            "value": 400
+          },
+          {
+            "question": "Denne drik laves af rødvin, krydderier og mandler.",
+            "answer": "Hvad er gløgg?",
+            "value": 800
+          },
+          {
+            "question": "Denne stærke drik nydes ofte til julefrokosten sammen med sild.",
+            "answer": "Hvad er snaps?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julepynt og symboler",
+        "questions": [
+          {
+            "question": "Denne pynt flettes af papir og hænges på juletræet.",
+            "answer": "Hvad er julehjerter?",
+            "value": 100
+          },
+          {
+            "question": "Denne pynt placeres øverst på juletræet.",
+            "answer": "Hvad er julestjernen?",
+            "value": 200
+          },
+          {
+            "question": "Denne figur af gran og pynt hænges på døren som velkomst.",
+            "answer": "Hvad er en julekrans?",
+            "value": 400
+          },
+          {
+            "question": "Denne tradition indebærer at tænde fire lys i december.",
+            "answer": "Hvad er adventskransen?",
+            "value": 800
+          },
+          {
+            "question": "Denne plante forbindes med kys og held i julen.",
+            "answer": "Hvad er mistelten?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julefilm",
+        "questions": [
+          {
+            "question": "Denne film fra 1990 handler om Kevin, der bliver efterladt alene hjemme.",
+            "answer": "Hvad er 'Home Alone'?",
+            "value": 100
+          },
+          {
+            "question": "Denne film fra 2003 handler om en mand, der er opvokset blandt nisser.",
+            "answer": "Hvad er 'Elf'?",
+            "value": 200
+          },
+          {
+            "question": "Denne film fra 1947 handler om en mand, der hævder at være den rigtige julemand.",
+            "answer": "Hvad er 'Miracle on 34th Street'?",
+            "value": 400
+          },
+          {
+            "question": "Denne film fra 2004 handler om et magisk tog til Nordpolen.",
+            "answer": "Hvad er 'The Polar Express'?",
+            "value": 800
+          },
+          {
+            "question": "Denne film fra 1946 handler om George Bailey og englen Clarence.",
+            "answer": "Hvad er 'It’s a Wonderful Life'?",
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "name": "Julegaver og lege",
+        "questions": [
+          {
+            "question": "Denne gave gemmer sig i risalamanden juleaften.",
+            "answer": "Hvad er mandelgaven?",
+            "value": 100
+          },
+          {
+            "question": "Denne leg med gaver spilles ofte juleaften i Danmark.",
+            "answer": "Hvad er pakkeleg?",
+            "value": 200
+          },
+          {
+            "question": "Denne tradition i Storbritannien involverer små gaver i paprør, der knalder.",
+            "answer": "Hvad er Christmas crackers?",
+            "value": 400
+          },
+          {
+            "question": "Denne tradition betyder, at man først må åbne gaver efter dansen om juletræet.",
+            "answer": "Hvad er gaveuddeling juleaften?",
+            "value": 800
+          },
+          {
+            "question": "Denne type gave er ofte hjemmelavet og personlig.",
+            "answer": "Hvad er en håndlavet gave?",
+            "value": 1000
+          }
+        ]
+      }
+    ]
+  }
+]
